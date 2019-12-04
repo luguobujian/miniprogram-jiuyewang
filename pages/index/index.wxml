@@ -1,6 +1,109 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
+
+  <view class="page-section">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input" bindtap="goSearchPage">
+        <image class="search-ico" src="../../image/search.png"></image>
+        <view class="weui-input">请输入关键词</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+  <view class="page-section tbmargin">
+    <view class="box">
+      <view class="box-one clearfix">
+        <view class="title-box fl">
+          <view class="title">新闻</view>
+          <view class="simple-title">news</view>
+        </view>
+        <view class="c-box fl">
+          <view class="c">11月16日第四场高校毕业生招聘大会开幕</view>
+          <view class="c">教师招聘考试之注意的种类</view>
+        </view>
+        <view class="more-box fl" bindtap="goNextPage">
+          <view class="more">更多</view>
+        </view>
+      </view>
+      <view class="clearfix">
+        <view class="title-box fl">
+          <view class="title">公告</view>
+          <view class="simple-title">Notice</view>
+        </view>
+        <view class="c-box fl">
+          <view class="c">11月16日第四场高校毕业生招聘大会开幕</view>
+          <view class="c">教师招聘考试之注意的种类</view>
+        </view>
+        <view class="more-box fl">
+          <view class="more">更多</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <view>
+      <view class="top-tab">
+        <view class="tab-one active">推荐</view>
+        <view class="tab-one">最新</view>
+      </view>
+      <view class="item-list-box">
+        <view class="item-list">
+          <view class="lr-box clearfix">
+            <view class="item-list-left fl">
+              <view class="item-list-left-t">碧桂园控股有限公司</view>
+              <view class="item-list-left-b">广州
+                <view class="vertical"></view> 移动互联网
+                <view class="vertical"></view> 15个在招职位</view>
+            </view>
+            <view class="item-list-right fr">
+              <image></image>
+            </view>
+          </view>
+        </view>
+        <view class="item-list">
+          <view class="lr-box clearfix">
+            <view class="item-list-left fl">
+              <view class="item-list-left-t">碧桂园控股有限公司</view>
+              <view class="item-list-left-b">广州
+                <view class="vertical"></view> 移动互联网
+                <view class="vertical"></view> 15个在招职位</view>
+            </view>
+            <view class="item-list-right fr">
+              <image></image>
+            </view>
+          </view>
+        </view>
+        <view class="item-list">
+          <view class="lr-box clearfix">
+            <view class="item-list-left fl">
+              <view class="item-list-left-t">碧桂园控股有限公司</view>
+              <view class="item-list-left-b">广州
+                <view class="vertical"></view> 移动互联网
+                <view class="vertical"></view> 15个在招职位</view>
+            </view>
+            <view class="item-list-right fr">
+              <image></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -9,5 +112,6 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-  </view>
+  </view> -->
+
 </view>

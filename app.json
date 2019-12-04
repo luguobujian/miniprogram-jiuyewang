@@ -1,13 +1,36 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/job/job",
+    "pages/news/news",
+    "pages/newShow/newShow",
+    "pages/search/search",
+    "pages/jobShow/jobShow"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "宿州新区就业网",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#3994E5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/home1.png",
+        "selectedIconPath": "image/home1a.png"
+      },
+      {
+        "pagePath": "pages/job/job",
+        "text": "职位",
+        "iconPath": "image/home2.png",
+        "selectedIconPath": "image/home2a.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

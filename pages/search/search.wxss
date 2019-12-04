@@ -1,0 +1,32 @@
+/* pages/search/search.wxss */
+
+.search-ico {
+  left: 40rpx;
+}
+
+.weui-input {
+  padding-left: 88rpx;
+}
+
+.hot-box {
+  margin: 0 20rpx;
+}
+
+.hot-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin: 16rpx 0 22rpx;
+}
+
+.hot-tag {
+  display: inline-block;
+  height: 60rpx;
+  color: #666;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  padding-left: 24rpx;
+  padding-right: 23rpx;
+  margin-right: 17rpx;
+  margin-bottom: 14rpx;
+  background: rgba(248, 248, 248, 1);
+}

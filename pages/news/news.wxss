@@ -1,0 +1,32 @@
+/* pages/news/news.wxss */
+
+.item-list {
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.lr-box {
+  padding: 30rpx 28rpx;
+}
+
+.item-list-l {
+  width: 487rpx;
+  font-size: 34rpx;
+}
+
+.item-list-t {
+  line-height: 42rpx;
+  margin-top: -5rpx;
+}
+
+.item-list-b {
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 12rpx;
+}
+
+.item-list-r, .item-list-r image {
+  width: 180rpx;
+  height: 120rpx;
+  border-radius: 4rpx;
+  background: skyblue;
+}

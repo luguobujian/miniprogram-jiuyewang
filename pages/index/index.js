@@ -7,7 +7,20 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+
+
+
+    background: ['../../image/banner.png'],
+    indicatorDots: true,
+    indicatorColor: "rgba(255,255,255,.3)",
+    indicatorActiveColor: "rgba(255,255,255,1)",
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500
+
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,13 +28,13 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -42,6 +55,16 @@ Page({
         }
       })
     }
+  },
+  goSearchPage: function() {
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
+  goNextPage: function() {
+    wx.navigateTo({
+      url: '../news/news',
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

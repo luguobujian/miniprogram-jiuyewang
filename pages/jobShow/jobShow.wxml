@@ -1,0 +1,102 @@
+<!--pages/jobShow/jobShow.wxml-->
+<view class="container">
+  <view>
+    <view class="top-job">
+      <view>
+        <view class="clearfix">
+          <view class="fl">招聘高级操作工</view>
+          <view class="pric fr">3千-5千/月</view>
+        </view>
+        <view class="simple-title">
+          宿州-埇桥区
+          <view class="vertical"></view> 不限
+          <view class="vertical"></view> 大专
+        </view>
+        <view class="welfare-box">
+          <view class="welfare-tag">五险一金</view>
+        </view>
+      </view>
+      <view></view>
+    </view>
+    <view class="top-company">
+      <view>
+        <view class="lr-box clearfix">
+          <view class="left-box fl">
+            <view>碧桂园控股有限公司</view>
+            <view class="simple-title"> 宿州-埇桥区
+              <view class="vertical"></view> 不限
+              <view class="vertical"></view> 大专
+            </view>
+          </view>
+          <view class="right-box fr">
+            <image src=""></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="job-content">
+      <view>
+        <view class="job-content-title">工作内容</view>
+        <view class="job-con">
+          <view>
+            1、根据客户的物流需求拟定操作计划并实施完成； 2、负责协调船公司、报关行、场地和车队完成客户的物流需求； 3、和客户确认相关操作费用； 4、将操作进程告知客户并及时解决操作过程中出现的问题。 5、根据客户的物流需求拟定操作计划并实施完成； 6、负责协调船公司、报关行、场地和车队完成客户的物流需求；
+          </view>
+        </view>
+        <view class="addr-box">
+          <image src="../../image/addr.png"></image>安徽省宿州市埇桥区香樟大道521号
+        </view>
+      </view>
+    </view>
+    <view class="liuyan">
+      <view class="ly-title-box clearfix">
+        <view class="fl">全部留言(54)</view>
+        <view class="fr">我要留言</view>
+      </view>
+      <view>
+        <view class="item-list clearfix">
+          <view class="avatar-box fl">
+            <image src=""></image>
+          </view>
+          <view class="item-list-right fr">
+            <view class="ilrt clearfix">
+              <view class="fl">平平淡淡</view>
+              <view class="fr">05-04 14:24</view>
+            </view>
+            <view class="ilrm">请问这个职位现在还在招人吗？</view>
+            <view class="ilrb">
+              <view class="ilrbl">公司回复：</view>
+              <view class="ilrbr">在招，欢迎来我司面试</view>
+            </view>
+          </view>
+        </view>
+        <view class="item-list clearfix">
+          <view class="avatar-box fl">
+            <image src=""></image>
+          </view>
+          <view class="item-list-right fr">
+            <view class="ilrt clearfix">
+              <view class="fl">平平淡淡</view>
+              <view class="fr">05-04 14:24</view>
+            </view>
+            <view class="ilrm">请问这个职位现在还在招人吗？</view>
+            <view class="ilrb">
+              <view class="ilrbl">公司回复：</view>
+              <view class="ilrbr">在招，欢迎来我司面试</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="clearfix">
+        <view class="share-box fl">
+          <image src="../../image/share.png"></image>
+          <view>分享</view>
+        </view>
+        <view class="btn-box fl">
+          <button>申请职位</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
