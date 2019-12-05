@@ -1,0 +1,59 @@
+/* pages/simple/simple.wxss */
+
+.weui-cells {
+  background-color: #fff;
+}
+
+.weui-cell {
+  width: 620rpx;
+}
+
+.weui-r {
+  margin-top: 18rpx;
+  margin-right: 30rpx;
+}
+
+.weui-r image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.list-box {
+  margin: 11rpx;
+}
+
+.item-list {
+  display: inline-block;
+  width: 304rpx;
+  height: 458rpx;
+  background: rgba(255, 255, 255, 1);
+  padding: 23rpx 20rpx 19rpx;
+  border-radius: 4rpx;
+  margin: 10rpx;
+}
+
+.item-title {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.item-con {
+  width: 255rpx;
+  height: 275rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 36rpx;
+  background: rgba(245, 245, 245, 1);
+  padding: 23rpx 24rpx 22rpx 21rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.some-time {
+  color: #999;
+  font-size: 24rpx;
+  padding-top: 20rpx;
+}

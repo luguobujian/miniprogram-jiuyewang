@@ -61,7 +61,7 @@
         <view class="tab-one">最新</view>
       </view>
       <view class="item-list-box">
-        <view class="item-list">
+        <view class="item-list" bindtap="goCompanyPage">
           <view class="lr-box clearfix">
             <view class="item-list-left fl">
               <view class="item-list-left-t">碧桂园控股有限公司</view>

@@ -66,6 +66,11 @@ Page({
       url: '../news/news',
     })
   },
+  goCompanyPage: function() {
+    wx.navigateTo({
+      url: '../companyShow/companyShow',
+    })
+  },
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

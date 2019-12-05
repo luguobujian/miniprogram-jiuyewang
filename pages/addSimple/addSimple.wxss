@@ -1,0 +1,39 @@
+/* pages/addSimple/addSimple.wxss */
+
+page, .container {
+  height: 100%;
+  background-color: #fff;
+}
+
+.con {
+  padding: 0 25rpx;
+  background-color: #fff;
+  border-top: 1px solid #f5f5f5;
+}
+
+.con-tit {
+  font-size: 28rpx;
+  padding: 23rpx 0 25rpx;
+}
+
+.con-con textarea {
+  width: 630rpx;
+  height: 420rpx;
+  padding: 40rpx 35rpx;
+  background-color: #f5f5f5;
+}
+
+.btn {
+  margin: 29rpx 0;
+}
+
+.btn button {
+  width: 700rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: normal;
+  padding: 0;
+  background-color: #3994e5;
+}

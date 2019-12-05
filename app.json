@@ -6,7 +6,15 @@
     "pages/news/news",
     "pages/newShow/newShow",
     "pages/search/search",
-    "pages/jobShow/jobShow"
+    "pages/jobShow/jobShow",
+    "pages/companyShow/companyShow",
+    "pages/resume/resume",
+    "pages/resumeShow/resumeShow",
+    "pages/invited/invited",
+    "pages/simple/simple",
+    "pages/addSimple/addSimple",
+    "pages/mine/mine",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,6 +37,24 @@
         "text": "职位",
         "iconPath": "image/home2.png",
         "selectedIconPath": "image/home2a.png"
+      },
+      {
+        "pagePath": "pages/resume/resume",
+        "text": "求职",
+        "iconPath": "image/home3.png",
+        "selectedIconPath": "image/home3a.png"
+      },
+      {
+        "pagePath": "pages/simple/simple",
+        "text": "互动",
+        "iconPath": "image/home4.png",
+        "selectedIconPath": "image/home4a.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "image/home5.png",
+        "selectedIconPath": "image/home5a.png"
       }
     ]
   },

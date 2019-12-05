@@ -1,0 +1,20 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <view>
+    <view>
+      <view class="user-box clearfix">
+        <view class="avatar-box fl">
+          <image></image>
+        </view>
+        <view class="user-right fl">
+          <view class="user-right-t">王小明</view>
+          <view class="user-right-b">
+            <image src="../../image/refresh.png"></image>建议更新在线简历
+          </view>
+        </view>
+      </view>
+      <view></view>
+      <view></view>
+    </view>
+  </view>
+</view>

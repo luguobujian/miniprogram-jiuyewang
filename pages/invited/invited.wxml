@@ -1,0 +1,22 @@
+<!--pages/invited/invited.wxml-->
+<view class="container">
+  <view class="section clearfix">
+    <view class="section-title fl">职位</view>
+    <view class="fr">产品经理 
+      <view class="pric fr">
+        4k-5k
+        <image src="../../image/go.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="t-box">
+    <view class="t-tit">消息</view>
+    <view class="t-con">
+      <textarea placeholder="你好，你的经历和我们的岗位比较匹配，发份简历给我吧！"></textarea>
+    </view>
+  </view>
+
+  <view class="t-btn">
+    <button>发送</button>
+  </view>
+</view>
