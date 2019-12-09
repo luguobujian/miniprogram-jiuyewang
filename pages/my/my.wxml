@@ -13,8 +13,20 @@
           </view>
         </view>
       </view>
-      <view></view>
-      <view></view>
+      <view class="item-btn clearfix" bindtap="goResumeEdit">
+        <image class="ico fl" src="../../image/mitem2.png"></image>
+        <view class="fl">我的简历</view>
+        <image class="go fr" src="../../image/go.png"></image>
+      </view>
+      <view class="item-btn clearfix">
+        <image class="ico fl" src="../../image/mitem1.png"></image>
+        <view class="fl">我的留言</view>
+        <image class="go fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="btn-box">
+      <view>切换至我要招人</view>
     </view>
   </view>
 </view>

@@ -1,15 +1,32 @@
-// pages/my/my.js
+// pages/editMyInfo/editMyInfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    array: ['男', '女'],
+    array2: ['初中', '高中', '中技', '中专', '大专', '本科', '硕士', '博士', '博后'],
+    index: 0,
+    region: ['安徽省', '宿州市', '埇桥区'],
+    customItem: '全部'
   },
-  goResumeEdit: function() {
-    wx.navigateTo({
-      url: '../resumeEdit/resumeEdit',
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindDateChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  bindRegionChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
     })
   },
   /**

@@ -1,4 +1,4 @@
-// pages/my/my.js
+// pages/resumeEdit/resumeEdit.js
 Page({
 
   /**
@@ -7,9 +7,29 @@ Page({
   data: {
 
   },
-  goResumeEdit: function() {
+  goEditMyInfo: function() {
     wx.navigateTo({
-      url: '../resumeEdit/resumeEdit',
+      url: '../editMyInfo/editMyInfo',
+    })
+  },
+  goDes: function() {
+    wx.navigateTo({
+      url: '../myDes/myDes',
+    })
+  },
+  goEditMyWork: function() {
+    wx.navigateTo({
+      url: '../editMyWork/editMyWork',
+    })
+  },
+  goEditEdu: function() {
+    wx.navigateTo({
+      url: '../editMyEdu/editMyEdu',
+    })
+  },
+  goEditPro: function() {
+    wx.navigateTo({
+      url: '../editMyPro/editMyPro',
     })
   },
   /**

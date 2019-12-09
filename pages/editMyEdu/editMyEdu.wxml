@@ -1,0 +1,49 @@
+<!--pages/editMyEdu/editMyEdu.wxml-->
+<view class="container">
+  <view>
+    <view class="item-inp">
+      <view class="item-inp-tit">学校名称</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+    <view class="item-inp">
+      <view class="item-inp-tit">专业</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">入学年份</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">毕业时间</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="btn-box">
+      <button class="save-btn">保存</button>
+    </view>
+  </view>
+</view>

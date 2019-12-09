@@ -1,0 +1,97 @@
+<!--pages/editMyInfo/editMyInfo.wxml-->
+<view class="container">
+  <view>
+    <view class="item-inp">
+      <view class="item-inp-tit">真实姓名</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">性别</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">出生年月</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">参加工作时间</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">工作地</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{region[0]}}-{{region[1]}}-{{region[2]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">学历</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{index}}" range="{{array2}}" bindchange="bindPickerChange">
+          <view class="picker">
+            {{array2[index]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp">
+      <view class="item-inp-tit">手机号</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+
+    <view class="item-inp">
+      <view class="item-inp-tit">邮箱</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+
+    <view class="btn-box">
+      <button>保存</button>
+    </view>
+  </view>
+</view>

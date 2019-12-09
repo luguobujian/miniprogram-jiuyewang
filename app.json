@@ -14,7 +14,13 @@
     "pages/simple/simple",
     "pages/addSimple/addSimple",
     "pages/mine/mine",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/resumeEdit/resumeEdit",
+    "pages/editMyInfo/editMyInfo",
+    "pages/myDes/myDes",
+    "pages/editMyWork/editMyWork",
+    "pages/editMyEdu/editMyEdu",
+    "pages/editMyPro/editMyPro"
   ],
   "window": {
     "backgroundTextStyle": "light",
