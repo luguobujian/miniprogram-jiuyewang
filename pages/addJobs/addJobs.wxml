@@ -1,0 +1,84 @@
+<!--pages/addJobs/addJobs.wxml-->
+<!--pages/editMyWork/editMyWork.wxml-->
+<view class="container">
+  <view>
+    <view class="item-inp">
+      <view class="item-inp-tit">职位名称</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+    <view class="item-inp">
+      <view class="item-inp-tit">工作地区</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">工作经验</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">学历要求</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">福利待遇</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="tt-box">
+      <view class="tit">工作内容
+        <text>（请详细描述该职位，可填写职位要求，岗位职责等。）</text> </view>
+      <view>
+        <textarea></textarea>
+      </view>
+    </view>
+
+    <view class="switch-box">
+      <view class="s-box clearfix">
+        <view class="fl">自动邀请投递</view>
+        <view class="fr">
+          <switch class="switch-btn"></switch>
+        </view>
+      </view>
+      <view class="tip">
+        发布成功后自动邀请30位3-5年经验、本科以上学历的JVA开发工 程师投递
+      </view>
+    </view>
+
+    <view class="btn-box">
+      <button class="save-btn">保存</button>
+    </view>
+  </view>
+</view>

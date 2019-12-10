@@ -1,0 +1,34 @@
+<!--pages/companyRecruitment/companyRecruitment.wxml-->
+<view class="container">
+  <view>
+    <view class="list-box">
+      <view class="item-list clearfix" bindtap="goResumeShow">
+        <view class="avatar-box fl">
+          <image class="avatar"></image>
+        </view>
+        <view class="info fl">
+          <view class="info-top">
+            <view class="info-top-top clearfix">
+              <view class="fl">王小明</view>
+              <view class="pric fr">3千-5千/月</view>
+            </view>
+            <view class="simple-title">
+              宿州-埇桥区
+              <view class="vertical"></view>
+              1-3年
+              <view class="vertical"></view>
+              大专
+            </view>
+            <view class="welfare-box">
+              <view class="welfare-tag">3小时前来过</view>
+            </view>
+          </view>
+          <view class="info-bottom">
+            <view class="info-bottom-t">软件操作工/富士康集团</view>
+            <view class="info-bottom-b">2017.2-2019.6</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

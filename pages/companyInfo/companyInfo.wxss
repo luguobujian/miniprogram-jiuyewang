@@ -1,0 +1,148 @@
+/* pages/companyInfo/companyInfo.wxss */
+
+.container > view {
+  margin-top: 20rpx;
+}
+
+.item-inp {
+  font-size: 30rpx;
+  background-color: #fff;
+  padding: 0 25rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.item-inp > view {
+  display: inline-block;
+  line-height: 88rpx;
+}
+
+.item-inp-tit {
+  width: 200rpx;
+}
+
+.item-inp-box {
+  width: 500rpx;
+}
+
+.item-inp-box input {
+  height: 28rpx;
+  text-align: right;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 22rpx 0;
+}
+
+.item-inp-box .picker {
+  width: 100%;
+  height: 28rpx;
+  text-align: right;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 30rpx 0;
+}
+
+.go-ico image {
+  width: 15rpx;
+  height: 30rpx;
+}
+
+.go-ico {
+  padding: 30rpx 0;
+  padding-left: 8rpx;
+}
+
+.item-inp-picker {
+  width: 478rpx;
+}
+
+.item-img {
+  height: 520rpx;
+  padding: 0 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.item-img .title {
+  font-size: 28rpx;
+  padding: 31rpx 0 28rpx;
+}
+
+.img-box {
+  width: 300rpx;
+  height: 400rpx;
+  background: rgba(245, 245, 245, 1);
+}
+
+.item-img .img-box image {
+  display: block;
+  width: 96rpx;
+  height: 96rpx;
+  padding-top: 152rpx;
+  margin: 0 auto;
+}
+
+.item-textarea {
+  /* height: 830rpx; */
+  padding: 0 25rpx 25rpx;
+  margin-bottom: 146rpx;
+  background-color: #fff;
+}
+
+.item-textarea .title {
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 31rpx 0 28rpx;
+}
+
+.textarea-box {
+  width: 700rpx;
+  height: 700rpx;
+  background: rgba(245, 245, 245, 1);
+}
+
+.textarea-box textarea {
+  width: 660rpx;
+  height: 420rpx;
+  padding: 20rpx;
+}
+
+.img-b {
+}
+
+.textarea-box .img-box {
+  display: inline-block;
+  width: 198rpx;
+  height: 198rpx;
+  margin-left: 25rpx;
+  margin-bottom: 25rpx;
+  border: 1rpx dashed rgba(204, 204, 204, 1);
+}
+
+.textarea-box .img-box image {
+  display: block;
+  width: 96rpx;
+  height: 96rpx;
+  padding-top: 52rpx;
+  margin: 0 auto;
+}
+
+.btn-box {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 26rpx;
+}
+
+.btn-box button {
+  /* display: inline-block; */
+  font-weight: normal;
+  line-height: 88rpx;
+  padding: 0;
+}
+
+.btn-box .save-btn {
+  width: 700rpx;
+  color: #fff;
+  font-weight: normal;
+  background: #3994e5;
+}

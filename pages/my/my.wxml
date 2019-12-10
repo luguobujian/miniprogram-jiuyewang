@@ -24,9 +24,39 @@
         <image class="go fr" src="../../image/go.png"></image>
       </view>
     </view>
-
+    <view>
+      <view class="company-box clearfix">
+        <view class="logo-box fl">
+          <image></image>
+        </view>
+        <view class="company-right fl">
+          <view>安徽江淮有限集团</view>
+        </view>
+      </view>
+      <view class="item-btn clearfix" bindtap="goCompanyJobs">
+        <image class="ico fl" src="../../image/mitem3.png"></image>
+        <view class="fl">职位管理
+          <view class="item-btn-tip">（查看并管理你的职位）</view>
+        </view>
+        <image class="go fr" src="../../image/go.png"></image>
+      </view>
+      <view class="item-btn clearfix" bindtap="goCompanyRecruitment">
+        <image class="ico fl" src="../../image/mitem2.png"></image>
+        <view class="fl">简历管理
+          <view class="item-btn-tip">（查看并管理接收的简历）</view>
+        </view>
+        <image class="go fr" src="../../image/go.png"></image>
+      </view>
+      <view class="item-btn clearfix" bindtap="goCompanyMessage">
+        <image class="ico fl" src="../../image/mitem1.png"></image>
+        <view class="fl">留言管理
+          <view class="item-btn-tip">（查看并回复接收到的留言）</view>
+        </view>
+        <image class="go fr" src="../../image/go.png"></image>
+      </view>
+    </view>
     <view class="btn-box">
-      <view>切换至我要招人</view>
+      <view bindtap="goCompanyInfo">切换至我要招人</view>
     </view>
   </view>
 </view>

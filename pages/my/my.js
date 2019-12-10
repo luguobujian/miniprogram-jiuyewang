@@ -12,6 +12,26 @@ Page({
       url: '../resumeEdit/resumeEdit',
     })
   },
+  goCompanyJobs: function() {
+    wx.navigateTo({
+      url: '../companyJobs/companyJobs',
+    })
+  },
+  goCompanyInfo: function() {
+    wx.navigateTo({
+      url: '../companyInfo/companyInfo',
+    })
+  },
+  goCompanyRecruitment: function() {
+    wx.navigateTo({
+      url: '../companyRecruitment/companyRecruitment',
+    })
+  },
+  goCompanyMessage: function() {
+    wx.navigateTo({
+      url: '../companyMessage/companyMessage',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

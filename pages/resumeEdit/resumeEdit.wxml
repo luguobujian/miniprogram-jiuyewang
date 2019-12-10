@@ -97,7 +97,7 @@
 
     <view class="c-con">
       <view class="title">资格证书
-        <view class="edit-btn fr">添加</view>
+        <view class="edit-btn fr" bindtap="goEditCert">添加</view>
       </view>
       <view class="cert-box">
         <view class="cert">英语6级

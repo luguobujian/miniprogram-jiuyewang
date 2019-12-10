@@ -28,7 +28,9 @@ page, .container {
 }
 
 .page-section {
+  background-color: #fff;
   border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .weui-cell {

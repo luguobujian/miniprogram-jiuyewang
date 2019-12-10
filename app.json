@@ -20,7 +20,13 @@
     "pages/myDes/myDes",
     "pages/editMyWork/editMyWork",
     "pages/editMyEdu/editMyEdu",
-    "pages/editMyPro/editMyPro"
+    "pages/editMyPro/editMyPro",
+    "pages/editMyCert/editMyCert",
+    "pages/companyJobs/companyJobs",
+    "pages/companyRecruitment/companyRecruitment",
+    "pages/companyMessage/companyMessage",
+    "pages/companyInfo/companyInfo",
+    "pages/addJobs/addJobs"
   ],
   "window": {
     "backgroundTextStyle": "light",

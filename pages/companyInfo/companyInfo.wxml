@@ -1,0 +1,63 @@
+<!--pages/companyInfo/companyInfo.wxml-->
+<view class="container">
+  <view>
+    <view class="item-inp">
+      <view class="item-inp-tit">公司全称</view>
+      <view class="item-inp-box fr">
+        <input placeholder="请输入公司营业执照上的全称"></input>
+      </view>
+    </view>
+
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">所在区域</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp">
+      <view class="item-inp-tit">详细地址</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+
+    <view class="item-inp">
+      <view class="item-inp-tit">联系电话</view>
+      <view class="item-inp-box fr">
+        <input></input>
+      </view>
+    </view>
+
+    <view class="item-img">
+      <view class="title">请上传营业执照</view>
+      <view class="img-box">
+        <image src="../../image/plus.png"></image>
+      </view>
+    </view>
+
+    <view class="item-textarea">
+      <view class="title">公司具体描述</view>
+      <view class="textarea-box">
+        <textarea></textarea>
+        <view class="img-b">
+          <view class="img-box">
+            <image src="../../image/plus.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="btn-box">
+      <button class="save-btn">保存</button>
+    </view>
+  </view>
+</view>

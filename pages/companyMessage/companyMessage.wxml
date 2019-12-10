@@ -1,0 +1,38 @@
+<!--pages/companyMessage/companyMessage.wxml-->
+<view class="container">
+  <view>
+    <view class="item-box clearfix">
+      <view class="item-list ">
+        <view class="clearfix">
+          <view class="avater-box fl">
+            <image></image>
+          </view>
+          <view class="right-box fl">
+            <view class="f-tit clearfix">
+              <view class="fl">平平淡淡</view>
+              <view class="fr">05-04 14:24</view>
+            </view>
+            <view class="s-con">请问这个职位现在还在招人吗？</view>
+            <view class="t-job">
+              <view class="job-box">
+                <view class="job-tit-box clearfix">
+                  <view class="job-tit fl">办公室文员行政</view>
+                  <view class="pric fr">3千-5千/月</view>
+                </view>
+                <view class="simple-tit clearfix">
+                  <view class="fl">宿州-埇桥区</view>
+                  <view class="fl">1-3年</view>
+                  <view class="fl">大专</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="b-btn">
+          <view class="btn fr">回复</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
