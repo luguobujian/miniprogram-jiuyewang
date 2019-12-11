@@ -26,7 +26,9 @@
     "pages/companyRecruitment/companyRecruitment",
     "pages/companyMessage/companyMessage",
     "pages/companyInfo/companyInfo",
-    "pages/addJobs/addJobs"
+    "pages/addJobs/addJobs",
+    "pages/login/login",
+    "pages/bind/bind"
   ],
   "window": {
     "backgroundTextStyle": "light",

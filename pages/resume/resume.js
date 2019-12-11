@@ -1,11 +1,13 @@
 // pages/resume/resume.js
+import Api from '../../api/api.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    dataList: ''
   },
   goResumeShow: function() {
     wx.navigateTo({
@@ -16,9 +18,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.getData()
   },
-
+  getData: function() {
+    let that = this
+    Api.requset('api/Resume/List')
+      .then(res => {
+        console.log(res)
+        that.setData({
+          dataList: res.data.PagedList.Data
+        })
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

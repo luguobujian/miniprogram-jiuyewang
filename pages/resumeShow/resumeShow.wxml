@@ -74,7 +74,7 @@
     </view>
 
 
-    <view class="c-con">
+    <view class="c-con l-view">
       <view class="title">资格证书</view>
       <view class="cert-box">
         <view class="cert">英语6级</view>

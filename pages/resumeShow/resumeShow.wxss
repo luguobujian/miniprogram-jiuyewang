@@ -107,6 +107,10 @@ page, .container {
   margin-bottom: 12rpx;
 }
 
+.l-view {
+  margin-bottom: 120rpx;
+}
+
 .footer {
   width: 100%;
   height: 98rpx;

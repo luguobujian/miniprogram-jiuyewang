@@ -70,6 +70,10 @@
   margin-right: 16rpx;
 }
 
+.liuyan {
+  margin-bottom: 120rpx;
+}
+
 .ly-title-box {
   font-size: 28rpx;
   padding: 28rpx 20rpx 25rpx;

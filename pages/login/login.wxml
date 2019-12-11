@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view>
+    <view>
+      <image class="logo"></image>
+    </view>
+
+  </view>
+  <view>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn">微信用户一键登录</button>
+  </view>
+</view>

@@ -1,4 +1,5 @@
 // pages/my/my.js
+const app = getApp()
 Page({
 
   /**
@@ -32,10 +33,20 @@ Page({
       url: '../companyMessage/companyMessage',
     })
   },
+  goLogin: function() {
+    wx.navigateTo({
+      url: '../login/login',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    if (app.globalData.openId) {
+
+    } else {
+      this.goLogin()
+    }
 
   },
 

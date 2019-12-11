@@ -8,7 +8,7 @@
       <view class="top-sort-classes">年龄</view>
     </view>
     <view class="list-box">
-      <view class="item-list clearfix" bindtap="goResumeShow">
+      <view wx:for="{{dataList}}" wx:key="{{item.Id}}" class="item-list clearfix" bindtap="goResumeShow">
         <view class="avatar-box fl">
           <image class="avatar"></image>
         </view>
@@ -30,8 +30,8 @@
             </view>
           </view>
           <view class="info-bottom">
-            <view class="info-bottom-t">软件操作工/富士康集团</view>
-            <view class="info-bottom-b">2017.2-2019.6</view>
+            <view class="info-bottom-t">{{item.LastWorkPosition}}</view>
+            <view class="info-bottom-b">{{item.LastWorkTime}}</view>
           </view>
         </view>
       </view>
