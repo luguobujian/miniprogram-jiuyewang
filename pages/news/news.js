@@ -1,22 +1,31 @@
 // pages/news/news.js
+import Api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    dataList: ''
   },
-  goNextPage: function() {
+  goNextPage: function(e) {
+
     wx.navigateTo({
-      url: '../newShow/newShow',
+      url: '../newShow/newShow?id=' + e.currentTarget.dataset.id,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let that = this
+    Api.requset('api/Article/List?Category=' + options.type)
+      .then(res => {
+        console.log(res)
+        that.setData({
+          dataList: res.data.PagedList.Data
+        })
+      })
   },
 
   /**

@@ -1,16 +1,16 @@
 <!--pages/news/news.wxml-->
 <view class="container">
   <view class="item-list-box">
-    <view class="item-list" bindtap="goNextPage">
+    <view wx:for="{{dataList}}" wx:key="{{item.Id}}" class="item-list" data-id="{{item.Id}}" bindtap="goNextPage">
       <view class="lr-box clearfix">
         <view class="item-list-l fl">
           <view class="item-list-t">
-            2019教师招聘考试之应该注意的 种类
+            {{item.Title}}
           </view>
-          <view class="item-list-b">宿州新区就业网</view>
+          <view class="item-list-b">{{item.DTime}}</view>
         </view>
         <view class="item-list-r fr">
-          <image></image>
+          <image src="{{item.Cover}}"></image>
         </view>
       </view>
     </view>

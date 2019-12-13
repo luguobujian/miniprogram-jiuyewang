@@ -1,22 +1,36 @@
 // pages/resumeShow/resumeShow.js
+import Api from '../../api/api.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    detail: ''
   },
   goInvited: function() {
     wx.navigateTo({
       url: '../invited/invited',
     })
   },
+
+  getData: function(id) {
+    let that = this
+    Api.requset('/api/Resume/Detail/' + id)
+      .then(res => {
+        console.log(res)
+        that.setData({
+          detail: res.data.Data
+        })
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(options)
+    this.getData(options.id)
   },
 
   /**

@@ -1,12 +1,14 @@
 // pages/my/my.js
 const app = getApp()
+import Api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    showMy: true,
+    userInfo: ''
   },
   goResumeEdit: function() {
     wx.navigateTo({
@@ -42,12 +44,48 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (app.globalData.openId) {
-
-    } else {
-      this.goLogin()
-    }
-
+    new Promise((resolve, reject) => {
+        wx.login({
+          success(res) {
+            resolve(res)
+          }
+        })
+      })
+      .then(r => Api.requset('api/Auth/Code2Session?js_code=' + r.code))
+      .then(r => {
+        new Promise((resolve, reject) => {
+          app.globalData.openId = r.data.Data.WxOpenId
+        })
+      })
+      .then(r => Api.requset('api/Auth/Login', {
+        "WxOpenId": app.globalData.openId
+      }, "POST"))
+      .then(r => {
+        new Promise((resolve, reject) => {
+          if (r.data.Code == 200) {
+            if (r.data.Data.Status == 1) {
+              wx.navigateTo({
+                url: '../bind/bind',
+              })
+            } else {
+              app.globalData.token = r.data.Data.Token
+              resolve(r.data.Data.Token)
+            }
+          }
+        })
+      })
+      .then(
+        r => Api.requset('api/Member/Basic')
+      ).then(res => {
+        console.log(res)
+        let that = this
+        if (res.data.Code == 200) {
+          app.globalData.userInfo = res.data.Data
+          that.setData({
+            userInfo: res.data.Data
+          })
+        }
+      })
   },
 
   /**

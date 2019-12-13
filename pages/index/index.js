@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import Api from '../../api/api.js'
 Page({
   data: {
     motto: 'Hello World',
@@ -9,10 +9,15 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
+    showTab: 1,
+
+    Slide: [],
+    News: [],
+    Notice: [],
+    Recommend: [],
+    Newest: [],
 
 
-
-    background: ['../../image/banner.png'],
     indicatorDots: true,
     indicatorColor: "rgba(255,255,255,.3)",
     indicatorActiveColor: "rgba(255,255,255,1)",
@@ -28,7 +33,22 @@ Page({
       url: '../logs/logs'
     })
   },
+  getIndexData: function() {
+    let that = this
+    Api.requset('api/Index/Detail')
+      .then(res => {
+        console.log(res)
+        that.setData({
+          Slide: res.data.Data.Slide,
+          News: res.data.Data.News,
+          Notice: res.data.Data.Notice,
+          Recommend: res.data.Data.Recommend,
+          Newest: res.data.Data.Newest
+        })
+      })
+  },
   onLoad: function() {
+    this.getIndexData()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -56,14 +76,19 @@ Page({
       })
     }
   },
+  switchNav: function(e) {
+    this.setData({
+      showTab: e.currentTarget.dataset.s
+    })
+  },
   goSearchPage: function() {
     wx.navigateTo({
       url: '../search/search',
     })
   },
-  goNextPage: function() {
+  goNextPage: function(e) {
     wx.navigateTo({
-      url: '../news/news',
+      url: '../news/news?type=' + e.currentTarget.dataset.type,
     })
   },
   goCompanyPage: function() {
@@ -72,7 +97,6 @@ Page({
     })
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

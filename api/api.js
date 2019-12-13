@@ -1,21 +1,23 @@
+const app = getApp()
 class Api {
   constructor() {
     this.baseUrl = 'http://xqjyw.lel.cn/'
-    this._header = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
+    this.header = {}
     this.requset = this.requset.bind(this)
   }
 
   async requset(url = '', data = {}, method = 'GET') {
     return new Promise((resolve, reject) => {
+      let header = {
+        'Authorization': app.globalData.token ? "BasicAuth " + app.globalData.token : '',
+        'Content-Type': 'application/json'
+      }
       method = method.toUpperCase()
       url = this.baseUrl + url;
       wx.request({
         url: url,
         data: data,
-        header: this.header,
+        header: header,
         method: method,
         success: (res => {
           if (res.statusCode === 200) {

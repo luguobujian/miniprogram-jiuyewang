@@ -1,11 +1,12 @@
 // pages/job/job.js
+import Api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    dataList: ''
   },
   goNextPage: function() {
     wx.navigateTo({
@@ -16,7 +17,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let that = this
+    Api.requset('api/Job/List')
+      .then(res => {
+        console.log(res)
+        that.setData({
+          dataList: res.data.PagedList.Data
+        })
+      })
   },
 
   /**

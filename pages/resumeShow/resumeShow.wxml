@@ -4,10 +4,10 @@
     <view class="top">
       <view class="top-t clearfix">
         <view class="top-left fl">
-          <view>王小明</view>
+          <view>{{detail.Name}}</view>
           <view>
             <view class="simple-title">
-              宿州-埇桥区
+              {{detial.Address}}
               <view class="vertical"></view>
               1-3年
               <view class="vertical"></view>
@@ -16,10 +16,10 @@
           </view>
           <view class="contact clearfix">
             <view class="tel-box fl">
-              <image src="../../image/tel.png"></image>18259695452
+              <image src="../../image/tel.png"></image>{{detail.MobilePhone}}
             </view>
             <view class="fl">
-              <image src="../../image/email.png"></image>7541254621@qq.com
+              <image src="../../image/email.png"></image>{{detail.Email}}
             </view>
           </view>
         </view>
@@ -29,7 +29,7 @@
       </view>
       <view class="top-bottom">
         <view>
-          求职类型：人事专员 行政管理
+          求职类型：{{detail.Expect.Position}}
           <view class="pric fr">3千-5千/月</view>
         </view>
         <view>工作地点：宿州市</view>
@@ -37,38 +37,31 @@
     </view>
     <view class="c-con">
       <view class="title">自我描述</view>
-      <view class="c-con-c">
-        本人性格开朗、稳重、有活力，待人热情、真诚；工作认 真负责，积极主动，能吃苦耐劳，用于承受压力，勇于创 新；意志坚强，具有较强的无私奉献精神。
-      </view>
+      <text class="c-con-c">
+        {{detail.Speciality.Desc}}
+      </text>
     </view>
     <view class="c-con">
       <view class="title">工作经历</view>
-      <view class="bb">
-        <view class="second-title">富士康科技集团</view>
-        <view class="second-date">2017.05-2018.12</view>
-        <view class="second-title">人事专员 </view>
-        <view class="c-con-c c">
-          本人性格开朗、稳重、有活力，待人热情、真诚。
-        </view>
+      <view wx:for="{{detail.Experiences}}" wx:key="{{item.Id}}" class="bb">
+        <view class="second-title">{{item.Company}}</view>
+        <view class="second-date">{{item.StartDate}}-{{item.EndDate}}</view>
+        <view class="second-title">{{item.Duty}}</view>
+        <text class="c-con-c c">
+          {{item.Introduce}}
+        </text>
       </view>
-      <view>
-        <view class="second-title">富士康科技集团</view>
-        <view class="second-date">2017.05-2018.12</view>
-        <view class="second-title">人事专员 </view>
-        <view class="c-con-c c">
-          本人性格开朗、稳重、有活力，待人热情、真诚。
-        </view>
-      </view>
+
     </view>
 
 
     <view class="c-con">
       <view class="title">教育经历</view>
-      <view>
-        <view class="second-title">中国科学技术大学</view>
-        <view class="second-date">2017.05-2018.12</view>
+      <view wx:for="{{detail.Educations}}" wx:key="{{item.Id}}">
+        <view class="second-title">{{item.School}}</view>
+        <view class="second-date">{{item.StartDate}}-{{item.EndDate}}</view>
         <view class="c-con-c c">
-          本性 真诚
+          本性 {{item.Profession}}
         </view>
       </view>
     </view>
@@ -77,7 +70,7 @@
     <view class="c-con l-view">
       <view class="title">资格证书</view>
       <view class="cert-box">
-        <view class="cert">英语6级</view>
+        <view wx:for="{{detail.Skills}}" wx:key="{{item.Id}}" class="cert">{{item.Name}}</view>
       </view>
     </view>
 
@@ -87,11 +80,13 @@
         <view class="share-box fl">
           <image src="../../image/share.png"></image>
           <view>分享</view>
+
         </view>
         <view class="btn-box fl" bindtap="goInvited">
           <button>邀请投递</button>
         </view>
       </view>
+      <button open-type="share" class="share-btn">享</button>
     </view>
   </view>
 </view>

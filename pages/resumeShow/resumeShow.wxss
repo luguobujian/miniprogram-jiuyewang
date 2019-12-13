@@ -126,11 +126,22 @@ page, .container {
   font-size: 24rpx;
   text-align: center;
   margin-top: 19rpx;
+  /* position: relative; */
 }
 
 .share-box image {
   width: 35rpx;
   height: 35rpx;
+}
+
+view button.share-btn {
+  width: 110rpx;
+  height: 70rpx;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  opacity: 0;
 }
 
 .btn-box button {

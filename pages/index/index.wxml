@@ -12,10 +12,10 @@
 
   <view class="page-section page-section-spacing swiper">
     <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{background}}" wx:key="*this">
+      <block wx:for="{{Slide}}" wx:key="*this">
         <swiper-item>
           <view class="swiper-item">
-            <image src="{{item}}"></image>
+            <image src="{{item.Cover}}"></image>
           </view>
         </swiper-item>
       </block>
@@ -31,10 +31,9 @@
           <view class="simple-title">news</view>
         </view>
         <view class="c-box fl">
-          <view class="c">11月16日第四场高校毕业生招聘大会开幕</view>
-          <view class="c">教师招聘考试之注意的种类</view>
+          <view wx:for="{{News}}" wx:key="{{item.Id}}" wx:if="{{index < 2}}" class="c">{{item.Title}}</view>
         </view>
-        <view class="more-box fl" bindtap="goNextPage">
+        <view class="more-box fl" data-type="1" bindtap="goNextPage">
           <view class="more">更多</view>
         </view>
       </view>
@@ -44,10 +43,9 @@
           <view class="simple-title">Notice</view>
         </view>
         <view class="c-box fl">
-          <view class="c">11月16日第四场高校毕业生招聘大会开幕</view>
-          <view class="c">教师招聘考试之注意的种类</view>
+          <view wx:for="{{Notice}}" wx:key="{{item.Id}}" wx:if="{{index < 2}}" class="c">{{item.Title}}</view>
         </view>
-        <view class="more-box fl">
+        <view class="more-box fl" data-type="2" bindtap="goNextPage">
           <view class="more">更多</view>
         </view>
       </view>
@@ -57,46 +55,20 @@
   <view class="page-section">
     <view>
       <view class="top-tab">
-        <view class="tab-one active">推荐</view>
-        <view class="tab-one">最新</view>
+        <view class="tab-one {{showTab ==1? 'active': ''}}" data-s="1" bindtap="switchNav">推荐</view>
+        <view class="tab-one {{showTab ==2? 'active': ''}}" data-s="2" bindtap="switchNav">最新</view>
       </view>
       <view class="item-list-box">
-        <view class="item-list" bindtap="goCompanyPage">
+        <view wx:for="{{ showTab ==1?Recommend:Newest }}" wx:key="{{item.Id}}" class="item-list" bindtap="goCompanyPage">
           <view class="lr-box clearfix">
             <view class="item-list-left fl">
-              <view class="item-list-left-t">碧桂园控股有限公司</view>
-              <view class="item-list-left-b">广州
-                <view class="vertical"></view> 移动互联网
-                <view class="vertical"></view> 15个在招职位</view>
+              <view class="item-list-left-t">{{item.Name}}</view>
+              <view class="item-list-left-b">{{item.ScopeText}}
+                <view class="vertical"></view> {{item.Profession}}
+                <view class="vertical"></view> {{item.JobCount}}个在招职位</view>
             </view>
             <view class="item-list-right fr">
-              <image></image>
-            </view>
-          </view>
-        </view>
-        <view class="item-list">
-          <view class="lr-box clearfix">
-            <view class="item-list-left fl">
-              <view class="item-list-left-t">碧桂园控股有限公司</view>
-              <view class="item-list-left-b">广州
-                <view class="vertical"></view> 移动互联网
-                <view class="vertical"></view> 15个在招职位</view>
-            </view>
-            <view class="item-list-right fr">
-              <image></image>
-            </view>
-          </view>
-        </view>
-        <view class="item-list">
-          <view class="lr-box clearfix">
-            <view class="item-list-left fl">
-              <view class="item-list-left-t">碧桂园控股有限公司</view>
-              <view class="item-list-left-b">广州
-                <view class="vertical"></view> 移动互联网
-                <view class="vertical"></view> 15个在招职位</view>
-            </view>
-            <view class="item-list-right fr">
-              <image></image>
+              <image src="{{item.LogoUrl}}"></image>
             </view>
           </view>
         </view>

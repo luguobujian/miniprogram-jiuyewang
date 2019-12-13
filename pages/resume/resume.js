@@ -7,11 +7,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sort: 0,
     dataList: ''
   },
-  goResumeShow: function() {
+  navSwitch: function(e) {
+    this.setData({
+      sort: e.currentTarget.dataset.sort
+    })
+    this.getData()
+  },
+  goResumeShow: function(e) {
+    console.log(e)
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../resumeShow/resumeShow',
+      url: '../resumeShow/resumeShow?id=' + id,
     })
   },
   /**
@@ -22,7 +31,7 @@ Page({
   },
   getData: function() {
     let that = this
-    Api.requset('api/Resume/List')
+    Api.requset('api/Resume/List?Sort=' + that.sort)
       .then(res => {
         console.log(res)
         that.setData({

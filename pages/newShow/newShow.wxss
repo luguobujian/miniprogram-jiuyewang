@@ -1,4 +1,5 @@
 /* pages/newShow/newShow.wxss */
+@import '../../wxParse/wxParse.wxss';
 
 .box {
   padding: 22rpx 20rpx;

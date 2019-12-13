@@ -8,35 +8,22 @@
       <view class="top-sort-classes">结算方式</view>
     </view>
     <view class="list-box">
-      <view class="item-list">
+      <view wx:for="{{dataList}}" wx:key="{{item.Id}}" class="item-list">
         <view class="lr-box clearfix">
           <view class="item-list-left fl" bindtap="goNextPage">
-            <view class="title">办公室文员行政</view>
+            <view class="title">{{item.Name}}</view>
             <view class="simple-title">
-              宿州-埇桥区
+              {{item.SalaryText}}
               <view class="vertical"></view>
               1-3年
               <view class="vertical"></view>
               大专
             </view>
-            <view class="simple-title">安徽江淮有限公司</view>
+            <view class="simple-title">{{item.CompanyName}}</view>
           </view>
           <view class="item-list-right fr">
             <view class="pric">3千-5千/月</view>
-            <view class="date">05月24日</view>
-          </view>
-        </view>
-      </view>
-      <view class="item-list">
-        <view class="lr-box clearfix">
-          <view class="item-list-left fl">
-            <view class="title">办公室文员行政</view>
-            <view class="simple-title">宿州-埇桥区</view>
-            <view class="simple-title">安徽江淮有限公司</view>
-          </view>
-          <view class="item-list-right fr">
-            <view class="pric">3千-5千/月</view>
-            <view class="date">05月24日</view>
+            <view class="date">{{item.DTime}}</view>
           </view>
         </view>
       </view>
