@@ -63,8 +63,8 @@
           <view class="lr-box clearfix">
             <view class="item-list-left fl">
               <view class="item-list-left-t">{{item.Name}}</view>
-              <view class="item-list-left-b">{{item.ScopeText}}
-                <view class="vertical"></view> {{item.Profession}}
+              <view class="item-list-left-b">{{item.ScopeText || ''}}
+                <view class="vertical"></view> {{item.Profession || ''}}
                 <view class="vertical"></view> {{item.JobCount}}个在招职位</view>
             </view>
             <view class="item-list-right fr">

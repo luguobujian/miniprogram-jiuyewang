@@ -4,15 +4,15 @@
     <view class="item-inp">
       <view class="item-inp-tit">真实姓名</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{RealName}}" bindinput="bindRealNameInput"></input>
       </view>
     </view>
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">性别</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
+        <picker value="{{Sex}}" range="{{array}}" bindchange="bindSexPickerChange">
           <view class="picker">
-            {{array[index]}}
+            {{array[Sex]}}
           </view>
         </picker>
       </view>
@@ -23,9 +23,9 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">出生年月</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <picker mode="date" value="{{Birthday}}" bindchange="bindBirthdayDateChange">
           <view class="picker">
-            {{date}}
+            {{Birthday}}
           </view>
         </picker>
       </view>
@@ -37,9 +37,9 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">参加工作时间</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <picker mode="date" value="{{WorkBeginDate}}" bindchange="bindWorkBeginDateChange">
           <view class="picker">
-            {{date}}
+            {{WorkBeginDate}}
           </view>
         </picker>
       </view>
@@ -51,9 +51,9 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">工作地</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <picker value="{{Scope}}" range="{{regions}}" bindchange="bindRegionChange">
           <view class="picker">
-            {{region[0]}}-{{region[1]}}-{{region[2]}}
+            {{regions[Scope]}}
           </view>
         </picker>
       </view>
@@ -65,9 +65,9 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">学历</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker value="{{index}}" range="{{array2}}" bindchange="bindPickerChange">
+        <picker value="{{Education}}" range="{{array2}}" bindchange="bindEducationChange">
           <view class="picker">
-            {{array2[index]}}
+            {{array2[Education]}}
           </view>
         </picker>
       </view>
@@ -79,19 +79,19 @@
     <view class="item-inp">
       <view class="item-inp-tit">手机号</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{MobilePhone}}" bindinput="bindMobilePhoneInput"></input>
       </view>
     </view>
 
     <view class="item-inp">
       <view class="item-inp-tit">邮箱</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{Email}}" bindinput="bindEmailInput"></input>
       </view>
     </view>
 
     <view class="btn-box">
-      <button>保存</button>
+      <button bindtap="save">保存</button>
     </view>
   </view>
 </view>

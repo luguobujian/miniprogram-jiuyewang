@@ -1,0 +1,50 @@
+<!--pages/editMyExpect/editMyExpect.wxml-->
+<view class="container">
+  <view>
+    <view class="item-inp">
+      <view class="item-inp-tit fl">期望职位</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{index}}" range="{{array}}" range-key="Path" bindchange="bindPositionListChange">
+          <view class="picker">
+            {{array[index].Path}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">期望城市</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{index2}}" range="{{array2}}" bindchange="bindRegionChange">
+          <view class="picker">
+            {{array2[index2]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">期望月薪</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{index3}}" range="{{array3}}" bindchange="bindSalaryChange">
+          <view class="picker">
+            {{array3[index3]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="btn-box">
+      <button bindtap="save">保存</button>
+    </view>
+  </view>
+</view>

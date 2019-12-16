@@ -1,20 +1,26 @@
 // pages/resumeEdit/resumeEdit.js
+import Api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    detail: ''
   },
   goEditMyInfo: function() {
     wx.navigateTo({
       url: '../editMyInfo/editMyInfo',
     })
   },
+  goEditMyExpect: function() {
+    wx.navigateTo({
+      url: '../editMyExpect/editMyExpect?id=' + this.data.detail.Id,
+    })
+  },
   goDes: function() {
     wx.navigateTo({
-      url: '../myDes/myDes',
+      url: '../myDes/myDes?id=' + this.data.detail.Id,
     })
   },
   goEditMyWork: function() {
@@ -22,9 +28,9 @@ Page({
       url: '../editMyWork/editMyWork',
     })
   },
-  goEditEdu: function() {
+  goEditEdu: function(e) {
     wx.navigateTo({
-      url: '../editMyEdu/editMyEdu',
+      url: '../editMyEdu/editMyEdu?ae=' + e.currentTarget.dataset.ae,
     })
   },
   goEditPro: function() {
@@ -41,9 +47,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(options)
+    this.getData(options.id)
   },
-
+  getData: function(id) {
+    let that = this
+    Api.requset('/api/Resume/Detail/' + id)
+      .then(res => {
+        console.log(res)
+        that.setData({
+          detail: res.data.Data
+        })
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

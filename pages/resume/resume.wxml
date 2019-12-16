@@ -16,14 +16,14 @@
           <view class="info-top">
             <view class="info-top-top clearfix">
               <view class="fl">{{item.Name}}</view>
-              <view class="pric fr">3千-5千/月</view>
+              <view class="pric fr">{{item.Expect.SalaryText || ''}}</view>
             </view>
             <view class="simple-title">
-              宿州-埇桥区
+              {{item.Address }}
               <view class="vertical"></view>
-              1-3年
+              {{item.WorkExperienceText }}
               <view class="vertical"></view>
-              大专
+              {{item.EducationText }}
             </view>
             <view class="welfare-box">
               <view class="welfare-tag">3小时前来过</view>

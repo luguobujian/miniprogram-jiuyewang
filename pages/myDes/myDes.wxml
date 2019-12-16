@@ -3,10 +3,10 @@
   <view>
     <view class="tit">自我描述</view>
     <view>
-      <textarea placeholder="描述一下自己，字数控制在200以内"></textarea>
+      <textarea value="{{desc}}" placeholder="描述一下自己，字数控制在200以内" bindinput="bindDescInput"></textarea>
     </view>
     <view class="btn-box">
-      <button>保存</button>
+      <button bindtap="save">保存</button>
     </view>
   </view>
 </view>

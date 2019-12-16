@@ -4,22 +4,27 @@
     <view class="item-inp">
       <view class="item-inp-tit">学校名称</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{School}}"></input>
       </view>
     </view>
     <view class="item-inp">
       <view class="item-inp-tit">专业</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{Education}}"></input>
       </view>
     </view>
-
+    <view class="item-inp">
+      <view class="item-inp-tit">学历</view>
+      <view class="item-inp-box fr">
+        <input value="{{Profession}}"></input>
+      </view>
+    </view>
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">入学年份</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <picker mode="date" value="{{StartDate}}" bindchange="bindDateChange">
           <view class="picker">
-            {{date}}
+            {{StartDate}}
           </view>
         </picker>
       </view>
@@ -31,9 +36,9 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">毕业时间</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <picker mode="date" value="{{EndDate }}" bindchange="bindDateChange">
           <view class="picker">
-            {{date}}
+            {{EndDate }}
           </view>
         </picker>
       </view>

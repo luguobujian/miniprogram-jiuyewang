@@ -28,7 +28,8 @@
     "pages/companyInfo/companyInfo",
     "pages/addJobs/addJobs",
     "pages/login/login",
-    "pages/bind/bind"
+    "pages/bind/bind",
+    "pages/editMyExpect/editMyExpect"
   ],
   "window": {
     "backgroundTextStyle": "light",

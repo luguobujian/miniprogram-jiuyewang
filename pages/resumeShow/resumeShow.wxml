@@ -7,11 +7,11 @@
           <view>{{detail.Name}}</view>
           <view>
             <view class="simple-title">
-              {{detial.Address}}
+              {{detail.Address}}
               <view class="vertical"></view>
-              1-3年
+              {{detail.WorkExperienceText}}
               <view class="vertical"></view>
-              大专
+              {{detail.EducationText}}
             </view>
           </view>
           <view class="contact clearfix">
@@ -24,15 +24,15 @@
           </view>
         </view>
         <view class="avatar-box fl">
-          <image class="avatar"></image>
+          <image class="avatar" src="{{detail.AvatarUrl}}"></image>
         </view>
       </view>
       <view class="top-bottom">
         <view>
           求职类型：{{detail.Expect.Position}}
-          <view class="pric fr">3千-5千/月</view>
+          <view class="pric fr">{{detail.Expect.SalaryText}}</view>
         </view>
-        <view>工作地点：宿州市</view>
+        <view>工作地点：{{detail.Expect.ScopeText}}</view>
       </view>
     </view>
     <view class="c-con">

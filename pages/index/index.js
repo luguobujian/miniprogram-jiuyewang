@@ -76,6 +76,24 @@ Page({
       })
     }
   },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+    let that = this
+    Api.requset('api/Category/PositionTagList')
+      .then(res => {
+        console.log(res)
+      })
+    Api.requset('api/Category/PositionCategoryList')
+      .then(res => {
+        console.log(res)
+      })
+    Api.requset('api/Category/PositionList')
+      .then(res => {
+        console.log(res)
+      })
+  },
   switchNav: function(e) {
     this.setData({
       showTab: e.currentTarget.dataset.s

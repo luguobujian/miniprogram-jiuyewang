@@ -11,9 +11,15 @@ Page({
     userInfo: ''
   },
   goResumeEdit: function() {
-    wx.navigateTo({
-      url: '../resumeEdit/resumeEdit',
-    })
+    if (this.data.userInfo.ResumeId === 0) {
+      wx.navigateTo({
+        url: '../editMyInfo/editMyInfo?id=' + this.data.Id,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../resumeEdit/resumeEdit?id=' + this.data.userInfo.ResumeId,
+      })
+    }
   },
   goCompanyJobs: function() {
     wx.navigateTo({
