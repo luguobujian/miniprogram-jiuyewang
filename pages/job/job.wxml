@@ -10,19 +10,19 @@
     <view class="list-box">
       <view wx:for="{{dataList}}" wx:key="{{item.Id}}" class="item-list">
         <view class="lr-box clearfix">
-          <view class="item-list-left fl" bindtap="goNextPage">
+          <view class="item-list-left fl" data-id="{{item.Id}}" bindtap="goNextPage">
             <view class="title">{{item.Name}}</view>
             <view class="simple-title">
-              {{item.SalaryText}}
+              {{item.ScopeText}}
               <view class="vertical"></view>
-              1-3年
+              {{item.WorkExperienceText}}
               <view class="vertical"></view>
-              大专
+              {{item.EducationText}}
             </view>
             <view class="simple-title">{{item.CompanyName}}</view>
           </view>
           <view class="item-list-right fr">
-            <view class="pric">3千-5千/月</view>
+            <view class="pric">{{item.SalaryText}}</view>
             <view class="date">{{item.DTime}}</view>
           </view>
         </view>

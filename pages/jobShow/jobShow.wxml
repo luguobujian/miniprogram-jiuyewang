@@ -4,8 +4,8 @@
     <view class="top-job">
       <view>
         <view class="clearfix">
-          <view class="fl">招聘高级操作工</view>
-          <view class="pric fr">3千-5千/月</view>
+          <view class="fl">{{detail.Name}}</view>
+          <view class="pric fr">{{detail.SalaryText}}</view>
         </view>
         <view class="simple-title">
           宿州-埇桥区
@@ -22,7 +22,7 @@
       <view>
         <view class="lr-box clearfix">
           <view class="left-box fl">
-            <view>碧桂园控股有限公司</view>
+            <view>{{detail.CompanyName}}</view>
             <view class="simple-title"> 宿州-埇桥区
               <view class="vertical"></view> 不限
               <view class="vertical"></view> 大专
@@ -39,7 +39,7 @@
         <view class="job-content-title">工作内容</view>
         <view class="job-con">
           <view>
-            1、根据客户的物流需求拟定操作计划并实施完成； 2、负责协调船公司、报关行、场地和车队完成客户的物流需求； 3、和客户确认相关操作费用； 4、将操作进程告知客户并及时解决操作过程中出现的问题。 5、根据客户的物流需求拟定操作计划并实施完成； 6、负责协调船公司、报关行、场地和车队完成客户的物流需求；
+            {{detail.Desc}}
           </view>
         </view>
         <view class="addr-box">

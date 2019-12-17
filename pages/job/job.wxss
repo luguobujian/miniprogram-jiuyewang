@@ -36,11 +36,11 @@ page, .container {
 }
 
 .item-list-left {
-  width: 510rpx;
+  width: 448rpx;
 }
 
 .item-list-right {
-  width: 200rpx;
+  width: 262rpx;
 }
 
 .title {
@@ -57,8 +57,6 @@ page, .container {
 .simple-title:last-child {
   margin-bottom: 0rpx;
 }
-
-
 
 .date {
   color: #999;

@@ -8,9 +8,9 @@ Page({
   data: {
     dataList: ''
   },
-  goNextPage: function() {
+  goNextPage: function(e) {
     wx.navigateTo({
-      url: '../jobShow/jobShow',
+      url: '../jobShow/jobShow?id=' + e.currentTarget.dataset.id,
     })
   },
   /**

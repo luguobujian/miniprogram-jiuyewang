@@ -9,7 +9,7 @@ Page({
   data: {
     login: false,
     showMy: true,
-    userInfo: ''
+    userInfo: app.globalData.userInfo || ''
   },
   goResumeEdit: function() {
     if (!this.data.login) {
@@ -69,18 +69,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getData()
+    if (app.globalData.userInfo) {
+      this.setData({
+        login: true,
+        userInfo: app.globalData.userInfo,
+      })
+    } else {
+      this.getData()
+    }
+
   },
   getData: function() {
     new Promise((resolve, reject) => {
         wx.login({
           success(res) {
+            console.log(res)
             resolve(res)
           }
         })
       })
       .then(r => Api.requset('api/Auth/Code2Session?js_code=' + r.code))
       .then(r => {
+        console.log(r)
         new Promise((resolve, reject) => {
           app.globalData.openId = r.data.Data.WxOpenId
         })

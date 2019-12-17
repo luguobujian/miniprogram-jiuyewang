@@ -4,12 +4,12 @@
     <view wx-if="{{showMy}}">
       <view class="user-box clearfix">
         <view class="avatar-box fl">
-          <image></image>
+          <image src="{{userInfo.AvatarUrl}}"></image>
         </view>
         <view class="user-right fl" bindtap="goLogin">
           <view class="user-right-t">{{userInfo.Name || '未登录'}}</view>
           <view class="user-right-b">
-            <image src="{{userInfo.AvatarUrl}}"></image>建议更新在线简历
+            <image src="../../image/refresh.png"></image>建议更新在线简历
           </view>
         </view>
       </view>
