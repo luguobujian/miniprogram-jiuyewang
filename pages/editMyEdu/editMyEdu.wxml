@@ -4,25 +4,32 @@
     <view class="item-inp">
       <view class="item-inp-tit">学校名称</view>
       <view class="item-inp-box fr">
-        <input value="{{School}}"></input>
+        <input value="{{School}}" bindinput="bindSchoolInput"></input>
       </view>
     </view>
     <view class="item-inp">
       <view class="item-inp-tit">专业</view>
       <view class="item-inp-box fr">
-        <input value="{{Education}}"></input>
+        <input value="{{Profession}}" bindinput="bindProfessionInput"></input>
       </view>
     </view>
-    <view class="item-inp">
-      <view class="item-inp-tit">学历</view>
-      <view class="item-inp-box fr">
-        <input value="{{Profession}}"></input>
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">学历</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{Education}}" range="{{array2}}" bindchange="bindEducationChange">
+          <view class="picker">
+            {{array2[Education]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
       </view>
     </view>
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">入学年份</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{StartDate}}" bindchange="bindDateChange">
+        <picker mode="date" value="{{StartDate}}" bindchange="bindStartDateChange">
           <view class="picker">
             {{StartDate}}
           </view>
@@ -36,7 +43,7 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">毕业时间</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{EndDate }}" bindchange="bindDateChange">
+        <picker mode="date" value="{{EndDate}}" bindchange="bindEndDateChange">
           <view class="picker">
             {{EndDate }}
           </view>
@@ -48,7 +55,8 @@
     </view>
 
     <view class="btn-box">
-      <button class="save-btn">保存</button>
+      <button wx:if="{{ae != 'add'}}" class="del-btn" bindtap="del">删除</button>
+      <button class="save-btn" bindtap="save">保存</button>
     </view>
   </view>
 </view>

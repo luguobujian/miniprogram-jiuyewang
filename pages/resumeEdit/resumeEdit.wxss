@@ -102,7 +102,7 @@ page, .container {
   display: inline-block;
   font-size: 28rpx;
   background-color: #f5f5f5;
-  padding: 9rpx 45rpx 9rpx 36rpx;
+  padding: 9rpx 36rpx 9rpx 36rpx;
   margin-right: 15rpx;
   margin-bottom: 12rpx;
 }

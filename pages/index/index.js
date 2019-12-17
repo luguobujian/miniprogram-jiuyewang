@@ -109,9 +109,9 @@ Page({
       url: '../news/news?type=' + e.currentTarget.dataset.type,
     })
   },
-  goCompanyPage: function() {
+  goCompanyPage: function(e) {
     wx.navigateTo({
-      url: '../companyShow/companyShow',
+      url: '../companyShow/companyShow?id=' + e.currentTarget.dataset.id,
     })
   },
   getUserInfo: function(e) {

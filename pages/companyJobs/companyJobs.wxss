@@ -1,5 +1,6 @@
 .cont {
   margin-bottom: 140rpx;
+  border-top: 1rpx solid #f5f5f5;
 }
 
 .touch-item {

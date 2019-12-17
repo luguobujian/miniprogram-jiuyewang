@@ -6,10 +6,10 @@
         <view class="avatar-box fl">
           <image></image>
         </view>
-        <view class="user-right fl">
-          <view class="user-right-t">{{userInfo.Name}}</view>
+        <view class="user-right fl" bindtap="goLogin">
+          <view class="user-right-t">{{userInfo.Name || '未登录'}}</view>
           <view class="user-right-b">
-            <image src="../../image/refresh.png"></image>建议更新在线简历
+            <image src="{{userInfo.AvatarUrl}}"></image>建议更新在线简历
           </view>
         </view>
       </view>
@@ -18,7 +18,7 @@
         <view class="fl">我的简历</view>
         <image class="go fr" src="../../image/go.png"></image>
       </view>
-      <view class="item-btn clearfix">
+      <view class="item-btn clearfix" bindtap="goCompanyMessage">
         <image class="ico fl" src="../../image/mitem1.png"></image>
         <view class="fl">我的留言</view>
         <image class="go fr" src="../../image/go.png"></image>
@@ -27,10 +27,10 @@
     <view wx-if="{{!showMy}}">
       <view class="company-box clearfix">
         <view class="logo-box fl">
-          <image></image>
+          <image src="{{userInfo.AvatarUrl}}"></image>
         </view>
         <view class="company-right fl">
-          <view>安徽江淮有限集团</view>
+          <view>{{userInfo.Name}}</view>
         </view>
       </view>
       <view class="item-btn clearfix" bindtap="goCompanyJobs">
@@ -55,8 +55,8 @@
         <image class="go fr" src="../../image/go.png"></image>
       </view>
     </view>
-    <view class="btn-box">
+    <!-- <view class="btn-box">
       <view bindtap="goCompanyInfo">切换至我要招人</view>
-    </view>
+    </view> -->
   </view>
 </view>

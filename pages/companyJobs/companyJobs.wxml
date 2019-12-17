@@ -4,10 +4,10 @@
   <view class="cont">
     <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
       <view class="content">
-        <view class="title">产品经理</view>
-        <view class="simple-title">宿州-埇桥区 不限 大专</view>
+        <view class="title">{{item.Name}}</view>
+        <view class="simple-title">{{item.ScopeText}} | {{item.WorkExperienceText}} | {{item.EducationText}}</view>
 
-        <view class="pric">3千-5千/月</view>
+        <view class="pric">{{item.SalaryText}}</view>
       </view>
       <view class="del" catchtap="del" data-index="{{index}}">删除</view>
     </view>

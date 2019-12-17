@@ -7,10 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    login: false,
     showMy: true,
     userInfo: ''
   },
   goResumeEdit: function() {
+    if (!this.data.login) {
+      wx.navigateTo({
+        url: '../bind/bind',
+      })
+      return
+    }
     if (this.data.userInfo.ResumeId === 0) {
       wx.navigateTo({
         url: '../editMyInfo/editMyInfo?id=' + this.data.Id,
@@ -37,19 +44,34 @@ Page({
     })
   },
   goCompanyMessage: function() {
+    if (!this.data.login) {
+      wx.navigateTo({
+        url: '../bind/bind',
+      })
+      return
+    }
     wx.navigateTo({
       url: '../companyMessage/companyMessage',
     })
   },
   goLogin: function() {
-    wx.navigateTo({
-      url: '../login/login',
-    })
+    // wx.navigateTo({
+    //   url: '../login/login',
+    // })
+    if (!this.data.login) {
+      wx.navigateTo({
+        url: '../bind/bind',
+      })
+      return
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.getData()
+  },
+  getData: function() {
     new Promise((resolve, reject) => {
         wx.login({
           success(res) {
@@ -67,6 +89,13 @@ Page({
         "WxOpenId": app.globalData.openId
       }, "POST"))
       .then(r => {
+        console.log(r)
+        let that = this
+        if (r.data.Data.MType === 2) {
+          that.setData({
+            showMy: false
+          })
+        }
         new Promise((resolve, reject) => {
           if (r.data.Code == 200) {
             if (r.data.Data.Status == 1) {
@@ -93,7 +122,6 @@ Page({
         }
       })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

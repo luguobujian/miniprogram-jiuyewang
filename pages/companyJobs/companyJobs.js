@@ -1,4 +1,5 @@
 // pages/companyJobs/companyJobs.js
+import Api from '../../api/api.js'
 Page({
 
   /**
@@ -14,15 +15,39 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    for (var i = 0; i < 10; i++) {
-      this.data.items.push({
-        content: i + " 向左滑动删除哦,向左滑动删除哦,向左滑动删除哦,向左滑动删除哦,向左滑动删除哦",
-        isTouchMove: false //默认全隐藏删除
+
+
+    this.getData()
+  },
+  getData: function() {
+    let that = this
+
+    Api.requset('api/Company/JobList')
+      .then(res => {
+        console.log(res)
+        if (res.data.Code === 200) {
+          that.setData({
+            items: []
+          })
+          let tempData = res.data.Data
+          for (let i = 0; i < tempData.length; i++) {
+            that.data.items.push({
+              Id: tempData[i].Id,
+              Name: tempData[i].Name,
+              CompanyName: tempData[i].CompanyName,
+              SalaryText: tempData[i].SalaryText,
+              ScopeText: tempData[i].ScopeText,
+              WorkExperienceText: tempData[i].WorkExperienceText,
+              EducationText: tempData[i].EducationText,
+              isTouchMove: false,
+            })
+            console.log(that.data.items)
+          }
+          that.setData({
+            items: that.data.items
+          })
+        }
       })
-    }
-    this.setData({
-      items: this.data.items
-    })
   },
   goAddJobs: function() {
     wx.navigateTo({

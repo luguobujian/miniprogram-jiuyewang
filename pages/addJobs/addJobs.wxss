@@ -70,6 +70,10 @@
   font-size: 24rpx;
 }
 
+.tt-box {
+  margin-bottom: 140rpx;
+}
+
 textarea {
   width: 650rpx;
   height: 350rpx;

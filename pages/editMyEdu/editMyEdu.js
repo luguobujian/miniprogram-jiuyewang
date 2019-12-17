@@ -1,39 +1,133 @@
 // pages/editMyEdu/editMyEdu.js
+import Api from '../../api/api.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    ae: "",
+    array2: ['初中', '高中', '中技', '中专', '大专', '本科', '硕士', '博士', '博后'],
     "ResumeId": "",
     "School": "",
     "Education": "",
     "Profession": "",
     "StartDate": "",
-    "EndDate": ""
-  },
+    "EndDate": "",
 
+  },
+  bindSchoolInput(e) {
+
+    this.setData({
+      School: e.detail.value
+    })
+  },
+  bindProfessionInput(e) {
+    this.setData({
+      Profession: e.detail.value
+    })
+  },
+  bindEducationChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      Education: e.detail.value
+    })
+  },
+  bindStartDateChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      StartDate: e.detail.value
+    })
+  },
+  bindEndDateChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      EndDate: e.detail.value
+    })
+  },
+  save: function() {
+    let that = this
+    if (that.data.ae === 'add') {
+
+      Api.requset('api/Resume/EducationAdd', {
+          "ResumeId": that.data.ResumeId,
+          "School": that.data.School,
+          "Education": that.data.Education,
+          "StartDate": that.data.StartDate,
+          "EndDate": that.data.EndDate,
+          "Profession": that.data.Profession
+        }, "POST")
+        .then(res => {
+          if (res.data.Code === 200) {
+            const pages = getCurrentPages()
+            const prePage = pages[pages.length - 2];
+            prePage.getData(that.data.ResumeId)
+            wx.navigateBack()
+          }
+        })
+    } else {
+      Api.requset('api/Resume/WorkExperienceUpdate', {
+          "Id": that.data.ae,
+          "CompanyName": that.data.CompanyName,
+          "Duty": that.data.Duty,
+          "StartDate": that.data.StartDate,
+          "EndDate": that.data.EndDate,
+          "Introduce": that.data.Introduce
+        }, "POST")
+        .then(res => {
+          console.log(res)
+          if (res.data.Code === 200) {
+            const pages = getCurrentPages()
+            const prePage = pages[pages.length - 2];
+            prePage.getData(that.data.ResumeId)
+            wx.navigateBack()
+          }
+        })
+    }
+  },
+  del: function() {
+    let that = this
+    Api.requset('api/Resume/EducationDelete/' + that.data.ae, {}, "POST")
+      .then(res => {
+        if (res.data.Code === 200) {
+          const pages = getCurrentPages()
+          const prePage = pages[pages.length - 2];
+          prePage.getData(that.data.ResumeId)
+          wx.navigateBack()
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     console.log(options)
-    if (options.id) {
+    if (options.ae === 'add') {
       this.setData({
-        id: options.id
+        ae: 'add',
+        ResumeId: options.id
       })
-      this.getData(options.id)
+    } else {
+      this.setData({
+        ae: options.ae,
+        ResumeId: options.id
+      })
+      this.getData(options.ae)
     }
   },
   getData: function(id) {
     let that = this
-    Api.requset('api/Resume/Speciality?ResumeId=' + id)
+    Api.requset('api/Resume/Education/' + id)
       .then(res => {
         console.log(res)
         if (res.data.Code === 200) {
           if (res.data.Data) {
             that.setData({
-              desc: res.data.Data.Desc
+              "School": res.data.Data.School,
+              "Education": res.data.Data.Education,
+              "Profession": res.data.Data.Profession,
+              "StartDate": res.data.Data.StartDate,
+              "EndDate": res.data.Data.EndDate
             })
           }
         }

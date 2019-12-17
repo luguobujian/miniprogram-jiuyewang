@@ -74,22 +74,30 @@ textarea {
 }
 
 .btn-box {
-  width: 100%;
+  width: 96%;
+  display: flex;
+  justify-content: center;
   position: fixed;
-  left: 0;
+  left: 2%;
   bottom: 26rpx;
 }
 
 .btn-box button {
-  /* display: inline-block; */
+  display: inline-block;
   font-weight: normal;
   line-height: 88rpx;
   padding: 0;
 }
 
 .btn-box .save-btn {
-  width: 700rpx;
+  flex: 1;
   color: #fff;
   font-weight: normal;
   background: #3994e5;
+}
+
+.btn-box .del-btn {
+  width: 140rpx;
+  background: #eee;
+  margin-right: 10rpx;
 }

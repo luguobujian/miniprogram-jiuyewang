@@ -89,8 +89,10 @@ Page({
         console.log(res)
         if (res.data.Code == 200) {
           app.globalData.token = res.data.Data.Token
-          let pages = getCurrentPages()
-          console.log(pages)
+          const pages = getCurrentPages()
+          const prePage = pages[pages.length - 2];
+          prePage.getData()
+          wx.navigateBack()
         } else {
           wx.showToast({
             title: res.data.Msg,

@@ -59,7 +59,7 @@
         <view class="tab-one {{showTab ==2? 'active': ''}}" data-s="2" bindtap="switchNav">最新</view>
       </view>
       <view class="item-list-box">
-        <view wx:for="{{ showTab ==1?Recommend:Newest }}" wx:key="{{item.Id}}" class="item-list" bindtap="goCompanyPage">
+        <view wx:for="{{ showTab ==1?Recommend:Newest }}" wx:key="{{item.Id}}" class="item-list" data-id="{{item.Id}}" bindtap="goCompanyPage">
           <view class="lr-box clearfix">
             <view class="item-list-left fl">
               <view class="item-list-left-t">{{item.Name}}</view>

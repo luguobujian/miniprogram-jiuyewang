@@ -23,25 +23,34 @@ Page({
       url: '../myDes/myDes?id=' + this.data.detail.Id,
     })
   },
-  goEditMyWork: function() {
+  goEditMyWork: function(e) {
     wx.navigateTo({
-      url: '../editMyWork/editMyWork',
+      url: '../editMyWork/editMyWork?ae=' + e.currentTarget.dataset.ae + '&id=' + this.data.detail.Id,
     })
   },
   goEditEdu: function(e) {
     wx.navigateTo({
-      url: '../editMyEdu/editMyEdu?ae=' + e.currentTarget.dataset.ae,
+      url: '../editMyEdu/editMyEdu?ae=' + e.currentTarget.dataset.ae + '&id=' + this.data.detail.Id,
     })
   },
-  goEditPro: function() {
+  goEditPro: function(e) {
     wx.navigateTo({
-      url: '../editMyPro/editMyPro',
+      url: '../editMyPro/editMyPro?ae=' + e.currentTarget.dataset.ae + '&id=' + this.data.detail.Id,
     })
   },
   goEditCert: function() {
     wx.navigateTo({
-      url: '../editMyCert/editMyCert',
+      url: '../editMyCert/editMyCert?id=' + this.data.detail.Id,
     })
+  },
+  delSkill: function(e) {
+    let that = this
+    Api.requset('api/Resume/SkillDelete/' + e.currentTarget.dataset.id, {}, "POST")
+      .then(res => {
+        if (res.data.Code === 200) {
+          that.getData(that.data.detail.Id)
+        }
+      })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -5,22 +5,59 @@
     <view class="item-inp">
       <view class="item-inp-tit">职位名称</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{Name}}" bindinput="bindNameInput"></input>
       </view>
     </view>
-    <view class="item-inp">
-      <view class="item-inp-tit">工作地区</view>
-      <view class="item-inp-box fr">
-        <input></input>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">所属职位</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{PositionId}}" range="{{array5}}" range-key="Path" bindchange="bindPositionListChange">
+          <view class="picker">
+            {{array5[PositionId].Path}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">所属行业</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{ProfessionId}}" range="{{array6}}" bindchange="bindProfessionListChange">
+          <view class="picker">
+            {{array6[ProfessionId]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">工作地区</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{Scope}}" range="{{array}}" bindchange="bindRegionChange">
+          <view class="picker">
+            {{array[Scope]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
       </view>
     </view>
 
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">工作经验</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <picker value="{{WorkExperience}}" range="{{array2}}" bindchange="bindWorkExperienceChange">
           <view class="picker">
-            {{date}}
+            {{array2[WorkExperience]}}
           </view>
         </picker>
       </view>
@@ -32,9 +69,23 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">学历要求</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <picker value="{{Education}}" range="{{array3}}" bindchange="bindEducationChange">
           <view class="picker">
-            {{date}}
+            {{array3[Education]}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
+
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">月薪</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{Salary }}" range="{{array4}}" bindchange="bindSalaryChange">
+          <view class="picker">
+            {{array4[Salary ]}}
           </view>
         </picker>
       </view>
@@ -61,11 +112,11 @@
       <view class="tit">工作内容
         <text>（请详细描述该职位，可填写职位要求，岗位职责等。）</text> </view>
       <view>
-        <textarea></textarea>
+        <textarea value="{{bindDescInput}}" bindinput="bindDescInput"></textarea>
       </view>
     </view>
 
-    <view class="switch-box">
+    <!-- <view class="switch-box">
       <view class="s-box clearfix">
         <view class="fl">自动邀请投递</view>
         <view class="fr">
@@ -75,10 +126,10 @@
       <view class="tip">
         发布成功后自动邀请30位3-5年经验、本科以上学历的JVA开发工 程师投递
       </view>
-    </view>
+    </view> -->
 
     <view class="btn-box">
-      <button class="save-btn">保存</button>
+      <button class="save-btn" bindtap="save">保存</button>
     </view>
   </view>
 </view>

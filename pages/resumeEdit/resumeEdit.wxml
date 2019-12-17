@@ -50,22 +50,14 @@
       <view class="title">工作经历
         <view class="edit-btn fr" data-ae="add" bindtap="goEditMyWork">添加</view>
       </view>
-      <view class="bb">
-        <view class="second-title">富士康科技集团
-          <view class="edit-btn fr" bindtap="goEditMyWork">编辑</view>
+      <view wx:for="{{detail.Experiences}}" wx:key="{{item.Id}}" class="bb">
+        <view class="second-title">{{item.Company}}
+          <view class="edit-btn fr" data-ae="{{item.Id}}" bindtap="goEditMyWork">编辑</view>
         </view>
-        <view class="second-date">2017.05-2018.12</view>
-        <view class="second-title">人事专员 </view>
+        <view class="second-date">{{item.StartDate}}-{{item.EndDate}}</view>
+        <view class="second-title">{{item.Duty}}</view>
         <view class="c-con-c c">
-          本人性格开朗、稳重、有活力，待人热情、真诚。
-        </view>
-      </view>
-      <view>
-        <view class="second-title">富士康科技集团</view>
-        <view class="second-date">2017.05-2018.12</view>
-        <view class="second-title">人事专员 </view>
-        <view class="c-con-c c">
-          本人性格开朗、稳重、有活力，待人热情、真诚。
+          {{item.Introduce}}
         </view>
       </view>
     </view>
@@ -75,23 +67,25 @@
       <view class="title">教育经历
         <view class="edit-btn fr" data-ae="add" bindtap="goEditEdu">添加</view>
       </view>
-      <view>
-        <view class="second-title">中国科学技术大学
-          <view class="edit-btn fr" bindtap="goEditEdu">编辑</view>
+      <view wx:for="{{detail.Educations}}" wx:key="{{item.Id}}">
+        <view class="second-title">{{item.School}}
+          <view class="edit-btn fr" data-ae="{{item.Id}}" bindtap="goEditEdu">编辑</view>
         </view>
         <view class="second-date">2017.05-2018.12</view>
         <view class="c-con-c c">
-          本性 真诚
+          {{item.Education}} {{item.Profession}}
         </view>
       </view>
     </view>
 
     <view class="c-con">
-      <view class="title">项目经验
-        <view class="edit-btn fr" bindtap="goEditPro">编辑</view>
+      <view class="title">培训经历
+        <view class="edit-btn fr" data-ae="add" bindtap="goEditPro">添加</view>
       </view>
       <view>
-        <view class="second-title">项目一</view>
+        <view class="second-title">项目一
+          <view class="edit-btn fr" data-ae="{{item.Id}}" bindtap="goEditPro">编辑</view>
+        </view>
         <view class="second-date">2017.05-2018.12</view>
         <view class="c-con-c c">
           本性 真诚
@@ -104,8 +98,8 @@
         <view class="edit-btn fr" bindtap="goEditCert">添加</view>
       </view>
       <view class="cert-box">
-        <view class="cert">英语6级
-          <image src="../../image/X.png"></image>
+        <view wx:for="{{detail.Skills}}" wx:key="{{item.Id}}" class="cert">{{item.Name}}
+          <image src="../../image/X.png" data-id="{{item.Id}}" bindtap="delSkill"></image>
         </view>
       </view>
     </view>
