@@ -20,6 +20,7 @@ class Api {
         header: header,
         method: method,
         success: (res => {
+          wx.stopPullDownRefresh()
           if (res.statusCode === 200) {
             resolve(res)
           } else {
@@ -30,6 +31,7 @@ class Api {
           }
         }),
         fail: (res => {
+          wx.stopPullDownRefresh()
           if (this._errorHandler != null) {
             this._errorHandler(res)
           }

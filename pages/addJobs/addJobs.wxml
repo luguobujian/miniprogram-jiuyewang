@@ -26,9 +26,9 @@
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">所属行业</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker value="{{ProfessionId}}" range="{{array6}}" bindchange="bindProfessionListChange">
+        <picker value="{{ProfessionId}}" range="{{array6}}" range-key="Name" bindchange="bindProfessionListChange">
           <view class="picker">
-            {{array6[ProfessionId]}}
+            {{array6[ProfessionId].Name}}
           </view>
         </picker>
       </view>

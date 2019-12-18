@@ -8,9 +8,9 @@
           <view class="pric fr">{{detail.SalaryText}}</view>
         </view>
         <view class="simple-title">
-          宿州-埇桥区
-          <view class="vertical"></view> 不限
-          <view class="vertical"></view> 大专
+          {{detail.ScopeText}}
+          <view class="vertical"></view> {{detail.WorkExperienceText}}
+          <view class="vertical"></view> {{detail.EducationText}}
         </view>
         <view class="welfare-box">
           <view class="welfare-tag">五险一金</view>
@@ -22,14 +22,14 @@
       <view>
         <view class="lr-box clearfix">
           <view class="left-box fl">
-            <view>{{detail.CompanyName}}</view>
-            <view class="simple-title"> 宿州-埇桥区
-              <view class="vertical"></view> 不限
-              <view class="vertical"></view> 大专
+            <view>{{detail.Company.Name}}</view>
+            <view class="simple-title">{{detail.Company.ScopeText}}
+              <view class="vertical"></view>{{detail.Company.Profession}}
+              <view class="vertical"></view>{{detail.Company.JobCount}}在招职位
             </view>
           </view>
           <view class="right-box fr">
-            <image src=""></image>
+            <image src="{{detail.Company.LogoUrl}}"></image>
           </view>
         </view>
       </view>
@@ -42,59 +42,43 @@
             {{detail.Desc}}
           </view>
         </view>
-        <view class="addr-box">
-          <image src="../../image/addr.png"></image>安徽省宿州市埇桥区香樟大道521号
+        <view wx:if="{{detail.Company.Address}}" class="addr-box">
+          <image src="../../image/addr.png"></image>{{detail.Company.Address}}
         </view>
       </view>
     </view>
-    <view class="liuyan">
+    <view wx:if="{{list.length > 0}}" class="liuyan">
       <view class="ly-title-box clearfix">
-        <view class="fl">全部留言(54)</view>
-        <view class="fr">我要留言</view>
+        <view class="fl">全部留言({{list.length}})</view>
+        <view wx:if="{{role == 1}}" class="fr">我要留言</view>
       </view>
       <view>
-        <view class="item-list clearfix">
+        <view wx:for="{{list}}" wx:for-item="listItem" wx:key="{{listItem.Id}}" class="item-list clearfix">
           <view class="avatar-box fl">
-            <image src=""></image>
+            <image src="{{listItem.AvatarUrl}}"></image>
           </view>
           <view class="item-list-right fr">
             <view class="ilrt clearfix">
-              <view class="fl">平平淡淡</view>
+              <view class="fl">{{listItem.UserName}}</view>
               <view class="fr">05-04 14:24</view>
             </view>
-            <view class="ilrm">请问这个职位现在还在招人吗？</view>
-            <view class="ilrb">
+            <view class="ilrm">{{listItem.Desc}}</view>
+            <view wx:for="{{listItem.Reply}}" class="ilrb">
               <view class="ilrbl">公司回复：</view>
-              <view class="ilrbr">在招，欢迎来我司面试</view>
-            </view>
-          </view>
-        </view>
-        <view class="item-list clearfix">
-          <view class="avatar-box fl">
-            <image src=""></image>
-          </view>
-          <view class="item-list-right fr">
-            <view class="ilrt clearfix">
-              <view class="fl">平平淡淡</view>
-              <view class="fr">05-04 14:24</view>
-            </view>
-            <view class="ilrm">请问这个职位现在还在招人吗？</view>
-            <view class="ilrb">
-              <view class="ilrbl">公司回复：</view>
-              <view class="ilrbr">在招，欢迎来我司面试</view>
+              <view class="ilrbr">{{item.Desc}}</view>
             </view>
           </view>
         </view>
       </view>
     </view>
-    <view class="footer">
+    <view wx:if="{{role == 1}}" class="footer">
       <view class="clearfix">
         <view class="share-box fl">
           <image src="../../image/share.png"></image>
           <view>分享</view>
         </view>
         <view class="btn-box fl">
-          <button>申请职位</button>
+          <button bindtap="save">申请职位</button>
         </view>
       </view>
     </view>

@@ -36,7 +36,8 @@ App({
   globalData: {
     openId: null,
     token: null,
-    userInfo: null
+    role: null,
+    userInfo: null,
   }
 
 })

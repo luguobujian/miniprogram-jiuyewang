@@ -24,7 +24,9 @@ Page({
     vertical: false,
     autoplay: false,
     interval: 2000,
-    duration: 500
+    duration: 500,
+
+    role: '',
 
   },
   //事件处理函数
@@ -50,9 +52,10 @@ Page({
   onLoad: function() {
     this.getIndexData()
     this.getData()
-    
+
   },
   getData: function() {
+    let that = this
     new Promise((resolve, reject) => {
         wx.login({
           success(res) {
@@ -74,9 +77,15 @@ Page({
       .then(r => {
         console.log(r)
         let that = this
-        if (r.data.Data.MType === 2) {
+        if (r.data.Data.MType == 2) {
+          app.globalData.role = 2
           that.setData({
-            showMy: false
+            role: 2
+          })
+        } else if (r.data.Data.MType == 1) {
+          app.globalData.role = 1
+          that.setData({
+            role: 1
           })
         }
         new Promise((resolve, reject) => {
@@ -93,14 +102,26 @@ Page({
         })
       })
       .then(
-        r => Api.requset('api/Member/Basic')
-      ).then(res => {
-        console.log(res)
-        let that = this
-        if (res.data.Code == 200) {
-          app.globalData.userInfo = res.data.Data
+        r => {
+          if (that.data.role == 1) {
+            Api.requset('api/Member/Basic').then(res => {
+              console.log(res)
+              let that = this
+              if (res.data.Code == 200) {
+                app.globalData.userInfo = res.data.Data
+              }
+            })
+          } else {
+            Api.requset('api/Company/Basic').then(res => {
+              console.log(res)
+              let that = this
+              if (res.data.Code == 200) {
+                app.globalData.userInfo = res.data.Data
+              }
+            })
+          }
         }
-      })
+      )
   },
   /**
    * 生命周期函数--监听页面显示
@@ -146,5 +167,11 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+    this.getData()
+  },
 })

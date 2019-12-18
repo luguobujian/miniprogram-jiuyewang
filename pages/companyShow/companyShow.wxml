@@ -14,8 +14,8 @@
           <view class="vertical"></view>{{detail.Profession}}
           <view class="vertical"></view>{{detail.JobCount}}个在招职位
         </view>
-        <view class="welfare-box">
-          <view class="welfare-tag">五险一金</view>
+        <view wx:if="{{tag.length > 0}}" class="welfare-box clearfix">
+          <view wx:for="{{tag}}" class="welfare-tag fl">{{item}}</view>
         </view>
       </view>
       <view></view>
@@ -32,7 +32,7 @@
               {{detail.Introduce}}
             </view>
           </view>
-          <view class="addr-box">
+          <view wx:if="{{detail.Address}}" class="addr-box">
             <image src="../../image/addr.png"></image>{{detail.Address}}
           </view>
         </view>

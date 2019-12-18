@@ -75,7 +75,7 @@
     </view>
 
 
-    <view class="footer">
+    <view wx:if="{{role == 2}}" class="footer">
       <view class="clearfix">
         <view class="share-box fl">
           <image src="../../image/share.png"></image>

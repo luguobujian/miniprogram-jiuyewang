@@ -40,10 +40,11 @@ page, .container {
 .welfare-tag {
   color: #3994e5;
   font-size: 24rpx;
-  width: 126rpx;
+  /* width: 126rpx; */
   height: 40rpx;
   line-height: 40rpx;
   text-align: center;
+  padding: 0 10rpx;
   margin-right: 11rpx;
   background: rgba(57, 148, 229, 0.1);
   border-radius: 4rpx;

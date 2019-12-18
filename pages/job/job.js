@@ -6,7 +6,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList: ''
+    sort: 0,
+    dataList: '',
+
+    Limit: 10
+  },
+  navSwitch: function(e) {
+    this.setData({
+      sort: e.currentTarget.dataset.sort
+    })
+    this.getData()
   },
   goNextPage: function(e) {
     wx.navigateTo({
@@ -17,8 +26,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.getData()
+  },
+  getData: function() {
     let that = this
-    Api.requset('api/Job/List')
+    Api.requset('api/Job/List?Limit=' + that.data.Limit + '&Sort=' + that.sort)
       .then(res => {
         console.log(res)
         that.setData({
@@ -26,7 +38,6 @@ Page({
         })
       })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -59,14 +70,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    this.getData()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    this.setData({
+      Limit: this.data.Limit + 10
+    })
+    this.getData()
   },
 
   /**

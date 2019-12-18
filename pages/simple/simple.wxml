@@ -4,9 +4,10 @@
     <view class="weui-cells weui-cells_after-title clearfix">
       <view class="weui-cell weui-cell_input fl">
         <image class="search-ico" src="../../image/search.png"></image>
-        <input class="weui-input" auto-focus placeholder="请输入关键词" />
+        <input class="weui-input" value="{{s}}" auto-focus placeholder="请输入关键词" bindinput="bindSearchInput" />
+        <view wx:if="{{clear}}" class="clear-btn" bindtap="bindClear">×</view>
       </view>
-      <view class="weui-r fr" bindtap="goAddSimple">
+      <view wx:if="{{role == 2}}" class="weui-r fr" bindtap="goAddSimple">
         <image src="../../image/inp-r.png"></image>
       </view>
     </view>

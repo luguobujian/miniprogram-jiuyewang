@@ -109,6 +109,7 @@ textarea {
   position: fixed;
   left: 0;
   bottom: 26rpx;
+  z-index: 999;
 }
 
 .btn-box button {

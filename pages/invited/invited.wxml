@@ -1,22 +1,29 @@
 <!--pages/invited/invited.wxml-->
 <view class="container">
   <view class="section clearfix">
-    <view class="section-title fl">职位</view>
-    <view class="fr">产品经理 
-      <view class="pric fr">
-        4k-5k
-        <image src="../../image/go.png"></image>
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">职位</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{index}}" range="{{array}}" range-key="text" bindchange="bindJobsChange">
+          <view class="picker">
+            {{array[index].name}}
+            <view>{{array[index].salaryText}}</view>
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
       </view>
     </view>
   </view>
   <view class="t-box">
     <view class="t-tit">消息</view>
     <view class="t-con">
-      <textarea placeholder="你好，你的经历和我们的岗位比较匹配，发份简历给我吧！"></textarea>
+      <textarea value="{{message}}" placeholder="你好，你的经历和我们的岗位比较匹配，发份简历给我吧！" bindinput="bindMessageInput"></textarea>
     </view>
   </view>
 
   <view class="t-btn">
-    <button>发送</button>
+    <button bindtap="bindCome">发送</button>
   </view>
 </view>

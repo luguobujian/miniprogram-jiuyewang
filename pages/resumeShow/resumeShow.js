@@ -1,4 +1,5 @@
 // pages/resumeShow/resumeShow.js
+const app = getApp()
 import Api from '../../api/api.js'
 
 Page({
@@ -7,14 +8,27 @@ Page({
    * 页面的初始数据
    */
   data: {
+    role: '',
     detail: ''
   },
   goInvited: function() {
     wx.navigateTo({
-      url: '../invited/invited',
+      url: '../invited/invited?ResumeId=' + this.data.detail.Id,
     })
   },
 
+
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    console.log(options)
+    this.setData({
+      role: app.globalData.role
+    })
+    this.getData(options.id)
+  },
   getData: function(id) {
     let that = this
     Api.requset('/api/Resume/Detail/' + id)
@@ -25,14 +39,6 @@ Page({
         })
       })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-    console.log(options)
-    this.getData(options.id)
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

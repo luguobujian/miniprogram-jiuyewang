@@ -8,7 +8,7 @@ Page({
    */
   data: {
     login: false,
-    showMy: true,
+    role: '',
     userInfo: app.globalData.userInfo || ''
   },
   goResumeEdit: function() {
@@ -73,6 +73,7 @@ Page({
       this.setData({
         login: true,
         userInfo: app.globalData.userInfo,
+        role: app.globalData.role || ''
       })
     } else {
       this.getData()
@@ -80,6 +81,7 @@ Page({
 
   },
   getData: function() {
+    let that = this
     new Promise((resolve, reject) => {
         wx.login({
           success(res) {
@@ -100,10 +102,16 @@ Page({
       }, "POST"))
       .then(r => {
         console.log(r)
-        let that = this
-        if (r.data.Data.MType === 2) {
+
+        if (r.data.Data.MType == 2) {
+          app.globalData.role = 2
           that.setData({
-            showMy: false
+            role: 2
+          })
+        } else if (r.data.Data.MType == 1) {
+          app.globalData.role = 1
+          that.setData({
+            role: 1
           })
         }
         new Promise((resolve, reject) => {
@@ -120,17 +128,32 @@ Page({
         })
       })
       .then(
-        r => Api.requset('api/Member/Basic')
-      ).then(res => {
-        console.log(res)
-        let that = this
-        if (res.data.Code == 200) {
-          app.globalData.userInfo = res.data.Data
-          that.setData({
-            userInfo: res.data.Data
-          })
+        r => {
+          if (that.data.role == 1) {
+            Api.requset('api/Member/Basic').then(res => {
+              console.log(res)
+              let that = this
+              if (res.data.Code == 200) {
+                app.globalData.userInfo = res.data.Data
+                that.setData({
+                  userInfo: res.data.Data
+                })
+              }
+            })
+          } else {
+            Api.requset('api/Company/Basic').then(res => {
+              console.log(res)
+              let that = this
+              if (res.data.Code == 200) {
+                app.globalData.userInfo = res.data.Data
+                that.setData({
+                  userInfo: res.data.Data
+                })
+              }
+            })
+          }
         }
-      })
+      )
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

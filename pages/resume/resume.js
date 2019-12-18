@@ -8,7 +8,8 @@ Page({
    */
   data: {
     sort: 0,
-    dataList: ''
+    dataList: '',
+    Limit: 10
   },
   navSwitch: function(e) {
     this.setData({
@@ -31,7 +32,7 @@ Page({
   },
   getData: function() {
     let that = this
-    Api.requset('api/Resume/List?Sort=' + that.sort)
+    Api.requset('api/Resume/List?Limit=' + that.data.Limit + '&Sort=' + that.sort)
       .then(res => {
         console.log(res)
         that.setData({
@@ -71,14 +72,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    this.getData()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    this.setData({
+      Limit: this.data.Limit + 10
+    })
+    this.getData()
   },
 
   /**

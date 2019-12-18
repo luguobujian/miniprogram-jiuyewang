@@ -2,10 +2,9 @@
 <view class="container">
   <view>
     <view class="top-sort">
-      <view class="top-sort-classes">默认排序</view>
-      <view class="top-sort-classes">更新时间</view>
-      <view class="top-sort-classes">岗位</view>
-      <view class="top-sort-classes">结算方式</view>
+      <view class="top-sort-classes {{sort == 0? 'active': ''}}" data-sort="0" bindtap="navSwitch">默认排序</view>
+      <view class="top-sort-classes {{sort == 1? 'active': ''}}" data-sort="1" bindtap="navSwitch">更新时间</view>
+      <view class="top-sort-classes {{sort == 2? 'active': ''}}" data-sort="2" bindtap="navSwitch">岗位</view>
     </view>
     <view class="list-box">
       <view wx:for="{{dataList}}" wx:key="{{item.Id}}" class="item-list">

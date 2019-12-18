@@ -1,4 +1,5 @@
 // pages/simple/simple.js
+const app = getApp()
 import Api from '../../api/api.js'
 
 Page({
@@ -7,7 +8,27 @@ Page({
    * 页面的初始数据
    */
   data: {
+    s: '',
+    role: '',
+    clear: '',
     dataList: ''
+  },
+  bindSearchInput: function(e) {
+    if (!e.detail.value) {
+      this.getData("")
+      return
+    }
+    this.setData({
+      clear: true
+    })
+    this.getData(e.detail.value)
+  },
+  bindClear: function() {
+    this.setData({
+      s: '',
+      clear: false
+    })
+    this.getData("")
   },
   goAddSimple: function() {
     wx.navigateTo({
@@ -18,11 +39,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getData()
+    this.setData({
+      Limit: 99999,
+      role: app.globalData.role || ''
+    })
+    this.getData("")
   },
-  getData: function() {
+  getData: function(keyword) {
     let that = this
-    Api.requset('api/Interact/List')
+    Api.requset('api/Interact/List?Limit=' + that.data.Limit + '&keyword=' + keyword)
       .then(res => {
         that.setData({
           dataList: res.data.PagedList.Data
@@ -61,14 +86,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    this.getData("")
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    this.setData({
+      Limit: this.data.Limit + 10
+    })
+    this.getData("")
   },
 
   /**

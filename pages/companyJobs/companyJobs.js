@@ -10,7 +10,6 @@ Page({
     startX: 0, //开始坐标
     startY: 0
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -112,10 +111,14 @@ Page({
   },
   //删除事件
   del: function(e) {
-    this.data.items.splice(e.currentTarget.dataset.index, 1)
-    this.setData({
-      items: this.data.items
-    })
+    console.log(e)
+    let that = this
+    Api.requset('api/Company/JobDelete/' + e.currentTarget.dataset.id, {}, 'post')
+      .then(res => {
+        if (res.data.Code == 200) {
+          that.getData()
+        }
+      })
   },
 
   /**
@@ -150,7 +153,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    this.getData()
   },
 
   /**

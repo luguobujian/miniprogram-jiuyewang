@@ -1,11 +1,13 @@
 /* pages/simple/simple.wxss */
 
 .weui-cells {
+  display: flex;
   background-color: #fff;
 }
 
 .weui-cell {
-  width: 620rpx;
+  flex: 1;
+  /* width: 620rpx; */
 }
 
 .weui-r {

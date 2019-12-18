@@ -4,17 +4,30 @@
     <view class="item-inp">
       <view class="item-inp-tit">公司全称</view>
       <view class="item-inp-box fr">
-        <input placeholder="请输入公司营业执照上的全称"></input>
+        <input value="{{Name}}" placeholder="请输入公司营业执照上的全称" bindinput="bindNameInput"></input>
       </view>
     </view>
 
+    <view class="item-inp clearfix">
+      <view class="item-inp-tit fl">所属行业</view>
+      <view class="item-inp-box item-inp-picker fl">
+        <picker value="{{Profession}}" range="{{array}}" range-key="Name" bindchange="bindProfessionListChange">
+          <view class="picker">
+            {{array[Profession].Name}}
+          </view>
+        </picker>
+      </view>
+      <view class="go-ico fl">
+        <image class="fr" src="../../image/go.png"></image>
+      </view>
+    </view>
 
     <view class="item-inp clearfix">
       <view class="item-inp-tit fl">所在区域</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <picker value="{{Scope}}" range="{{regions}}" bindchange="bindRegionChange">
           <view class="picker">
-            {{date}}
+            {{regions[Scope]}}
           </view>
         </picker>
       </view>
@@ -26,30 +39,34 @@
     <view class="item-inp">
       <view class="item-inp-tit">详细地址</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{Address}}" bindinput="bindAddressInput"></input>
       </view>
     </view>
 
     <view class="item-inp">
       <view class="item-inp-tit">联系电话</view>
       <view class="item-inp-box fr">
-        <input></input>
+        <input value="{{ContactPhone}}" bindinput="bindContactPhoneInput"></input>
       </view>
     </view>
 
     <view class="item-img">
       <view class="title">请上传营业执照</view>
-      <view class="img-box">
-        <image src="../../image/plus.png"></image>
+      <view class="img-box" bindtap="chsBusinessLicense">
+        <image wx:if="{{!BusinessLicenseUrl}}" src="../../image/plus.png"></image>
+        <image wx:if="{{BusinessLicenseUrl}}" class="BusinessLicense" src="{{BusinessLicenseUrl}}"></image>
       </view>
     </view>
 
     <view class="item-textarea">
       <view class="title">公司具体描述</view>
       <view class="textarea-box">
-        <textarea></textarea>
+        <textarea value="{{Introduce}}" bindinput="bindIntroduceInput"></textarea>
         <view class="img-b">
-          <view class="img-box">
+          <view wx:if="{{Imgs.length > 0}}" wx:for="{{Imgs}}" class="img-box">
+            <image src="{{item}}" class="img"></image>
+          </view>
+          <view wx:if="{{Imgs.length < 9}}" class="img-box" bindtap="addImgs">
             <image src="../../image/plus.png"></image>
           </view>
         </view>
@@ -57,7 +74,7 @@
     </view>
 
     <view class="btn-box">
-      <button class="save-btn">保存</button>
+      <button class="save-btn" bindtap="save">保存</button>
     </view>
   </view>
 </view>

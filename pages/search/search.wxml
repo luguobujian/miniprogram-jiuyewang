@@ -4,18 +4,39 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <image class="search-ico" src="../../image/search.png"></image>
-        <input class="weui-input" auto-focus placeholder="请输入关键词" />
+        <input class="weui-input" value="{{s}}" auto-focus placeholder="请输入关键词" bindinput="bindSearchInput" />
+        <view wx:if="{{clear}}" class="clear-btn" bindtap="bindClear">×</view>
       </view>
     </view>
   </view>
-  <view class="page-section">
+  <view wx:if="{{hotList.length > 0}}" class="page-section">
     <view class="hot-box">
       <view class="hot-title">热门搜索</view>
       <view class="hot-tag-box">
-        <view class="hot-tag">人事专员</view>
-        <view class="hot-tag">人事专员</view>
-        <view class="hot-tag">人事专员</view>
-        <view class="hot-tag">人事专员</view>
+        <view wx:for="{{hotList}}" wx:key="*this" class="hot-tag" data-s="{{item.Keywords }}" bindtap="searchThis">{{item.Keywords }}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{lists.length > 0}}" class="page-section">
+    <view class="list-box">
+      <view wx:for="{{lists}}" wx:key="{{item.Id}}" class="item-list">
+        <view class="lr-box clearfix">
+          <view class="item-list-left fl" data-id="{{item.Id}}" bindtap="goNextPage">
+            <view class="title">{{item.Name}}</view>
+            <view class="simple-title">
+              {{item.ScopeText}}
+              <view class="vertical"></view>
+              {{item.WorkExperienceText}}
+              <view class="vertical"></view>
+              {{item.EducationText}}
+            </view>
+            <view class="simple-title">{{item.CompanyName}}</view>
+          </view>
+          <view class="item-list-right fr">
+            <view class="pric">{{item.SalaryText}}</view>
+            <view class="date">{{item.DTime}}</view>
+          </view>
+        </view>
       </view>
     </view>
   </view>

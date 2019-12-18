@@ -77,6 +77,17 @@ Page({
   },
   save: function() {
     let that = this
+    console.log({
+      "Name": that.data.Name,
+      "Scope": that.data.Scope,
+      "WorkExperience": that.data.WorkExperience,
+      "Education": that.data.Education,
+      "Salary": that.data.Salary,
+      "Tag": that.data.Tag,
+      "Desc": that.data.Desc,
+      "PositionId": that.data.array5[that.data.PositionId].Id,
+      "ProfessionId": that.data.array6[that.data.ProfessionId].Id
+    })
     Api.requset('api/Job/Add', {
         "Name": that.data.Name,
         "Scope": that.data.Scope,
@@ -85,8 +96,8 @@ Page({
         "Salary": that.data.Salary,
         "Tag": that.data.Tag,
         "Desc": that.data.Desc,
-        "PositionId": that.data.PositionId,
-        "ProfessionId": that.data.ProfessionId
+        "PositionId": that.data.array5[that.data.PositionId].Id,
+        "ProfessionId": that.data.array6[that.data.ProfessionId].Id
       }, "POST")
       .then(res => {
         if (res.data.Code === 200) {
@@ -108,6 +119,7 @@ Page({
     let that = this
     Api.requset('api/Category/PositionList?CategoryId=0')
       .then(res => {
+        console.log(res)
         that.setData({
           array5: res.data.Data
         })
@@ -117,6 +129,7 @@ Page({
     let that = this
     Api.requset('api/Category/ProfessionList')
       .then(res => {
+        console.log(res)
         that.setData({
           array6: res.data.Data
         })

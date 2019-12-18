@@ -8,6 +8,7 @@ Page({
   data: {
     showC: 0,
     detail: '',
+    tag: [],
     jobs: ''
   },
   switchNav: function(e) {
@@ -22,8 +23,10 @@ Page({
     let that = this
     Api.requset('api/Company/Detail/' + options.id)
       .then(res => {
+        console.log(res)
         that.setData({
-          detail: res.data.Data
+          detail: res.data.Data,
+          tag: res.data.Data.Tag && res.data.Data.Tag.split(',')
         })
       })
 

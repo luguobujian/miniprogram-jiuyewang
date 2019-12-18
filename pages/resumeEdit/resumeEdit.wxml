@@ -9,7 +9,7 @@
           </view>
           <view>
             <view class="simple-title">
-              {{detail.Address}}
+              {{detail.Expect.ScopeText}}
               <view class="vertical"></view>
               {{detail.WorkExperienceText}}
               <view class="vertical"></view>
@@ -82,13 +82,13 @@
       <view class="title">培训经历
         <view class="edit-btn fr" data-ae="add" bindtap="goEditPro">添加</view>
       </view>
-      <view>
-        <view class="second-title">项目一
+      <view wx:for="{{detail.Trains}}">
+        <view class="second-title">{{item.Name}}
           <view class="edit-btn fr" data-ae="{{item.Id}}" bindtap="goEditPro">编辑</view>
         </view>
-        <view class="second-date">2017.05-2018.12</view>
+        <view class="second-date">{{item.StartDate}}-{{item.EndDate}}</view>
         <view class="c-con-c c">
-          本性 真诚
+          {{item.Classes}} {{item.Desc}}
         </view>
       </view>
     </view>
