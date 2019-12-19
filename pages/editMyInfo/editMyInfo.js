@@ -126,10 +126,16 @@ Page({
       }, "POST")
       .then(res => {
         console.log(res)
-        if (res.data.Code === 200) {
-          wx.navigateTo({
-            url: '../../resumeEdit/resumeEdit?id=' + res.data.Data.ResumeId,
+        if (res.data.Code == 200) {
+          wx.showToast({
+            title: '保存成功',
+            icon: 'none',
+            duration: 1500
           })
+          const pages = getCurrentPages()
+          const prePage = pages[pages.length - 2];
+          prePage.getData(res.data.Data.ResumeId)
+          wx.navigateBack()
         }
       })
   },
@@ -138,7 +144,7 @@ Page({
     Api.requset('api/Member/Profile')
       .then(res => {
         that.setData({
-          RealName: res.data.Data.Name,
+          RealName: res.data.Data.RealName,
           Sex: res.data.Data.Sex,
           Birthday: res.data.Data.Birthday,
           WorkBeginDate: res.data.Data.WorkBeginDate,

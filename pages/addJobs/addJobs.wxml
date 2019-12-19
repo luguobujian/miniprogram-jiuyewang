@@ -94,14 +94,12 @@
       </view>
     </view>
 
-    <view class="item-inp clearfix">
+    <view class="item-inp clearfix" bindtap="getNextPage">
       <view class="item-inp-tit fl">福利待遇</view>
       <view class="item-inp-box item-inp-picker fl">
-        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
-          <view class="picker">
-            {{date}}
-          </view>
-        </picker>
+        <view class="picker">
+          {{date}}
+        </view>
       </view>
       <view class="go-ico fl">
         <image class="fr" src="../../image/go.png"></image>

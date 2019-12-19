@@ -21,15 +21,16 @@
 }
 
 .item-inp-box {
-  width: 500rpx;
+  width: 478rpx;
+  margin-right: 7rpx;
 }
 
 .item-inp-box input {
   height: 28rpx;
   text-align: right;
-  font-size: 28rpx;
-  line-height: 28rpx;
-  padding: 22rpx 0;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  padding: 20rpx 0;
 }
 
 .item-inp-box .picker {
@@ -48,11 +49,11 @@
 
 .go-ico {
   padding: 30rpx 0;
-  padding-left: 8rpx;
+  padding-left: 22rpx;
 }
 
 .item-inp-picker {
-  width: 478rpx;
+  width: 458rpx;
 }
 
 .btn-box {

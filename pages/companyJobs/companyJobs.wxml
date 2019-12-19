@@ -16,6 +16,6 @@
     <image src="../../image/zwsj.png"></image>
   </view>
   <view class="btn-box">
-    <button class="save-btn" bindtap="goAddJobs">发布新职业</button>
+    <button class="save-btn" bindtap="goAddJobs">发布新职位</button>
   </view>
 </view>

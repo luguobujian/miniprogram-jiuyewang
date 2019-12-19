@@ -8,7 +8,7 @@ Page({
    */
   data: {
     login: false,
-    role: '',
+    role: 1,
     userInfo: app.globalData.userInfo || ''
   },
   goResumeEdit: function() {
@@ -69,15 +69,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (app.globalData.userInfo) {
-      this.setData({
-        login: true,
-        userInfo: app.globalData.userInfo,
-        role: app.globalData.role || ''
-      })
-    } else {
-      this.getData()
-    }
+    // if (app.globalData.userInfo) {
+    //   this.setData({
+    //     login: true,
+    //     userInfo: app.globalData.userInfo,
+    //     role: app.globalData.role || ''
+    //   })
+    // } else {
+    //   this.getData()
+    // }
 
   },
   getData: function() {
@@ -166,7 +166,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (app.globalData.userInfo) {
+      this.setData({
+        login: true,
+        userInfo: app.globalData.userInfo,
+        role: app.globalData.role || ''
+      })
+    } else {
+      this.getData()
+    }
   },
 
   /**

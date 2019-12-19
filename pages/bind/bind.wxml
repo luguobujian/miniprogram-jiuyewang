@@ -1,10 +1,10 @@
 <!--pages/bind/bind.wxml-->
 <view class="container">
   <view class='row'>
-    <input placeholder='请输入手机号' bindinput='bindPhoneInput' />
+    <input type="number" placeholder='请输入手机号' bindinput='bindPhoneInput' />
   </view>
   <view class='row'>
-    <input placeholder='请输验证码' bindinput='bindCodeInput' style='width:65%;' />
+    <input type="number" placeholder='请输入验证码' bindinput='bindCodeInput' style='width:65%;' />
     <button class='codeBtn' bindtap='getCode' disabled='{{btnDisabled}}'>{{btnValue}}</button>
   </view>
   <view>

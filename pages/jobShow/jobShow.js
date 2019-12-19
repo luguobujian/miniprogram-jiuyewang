@@ -8,10 +8,28 @@ Page({
    */
   data: {
     role: '',
+    showInp: false,
+    Desc: '',
     detail: '',
     list: ''
   },
+  bindShowInp: function(e) {
+    if (this.data.showInp) {
+      this.setData({
+        showInp: false,
+      })
+    } else {
+      this.setData({
+        showInp: true,
+      })
+    }
 
+  },
+  goCompanyPage: function(e) {
+    wx.navigateTo({
+      url: '../companyShow/companyShow?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,6 +38,11 @@ Page({
       role: app.globalData.role || ''
     })
     this.getJobData(options.id)
+  },
+  bindDescInput: function(e) {
+    this.setData({
+      Desc: e.detail.value
+    })
   },
   getJobData: function(id) {
     let that = this
@@ -60,6 +83,34 @@ Page({
             title: '申请成功',
             icon: 'none'
           })
+        }
+      })
+  },
+  saveComment: function() {
+    let that = this
+    if (!that.data.Desc) {
+      wx.showToast({
+        icon: 'none',
+        title: '你什么都没输入',
+      })
+      return
+    }
+    console.log({
+      "JobId": that.data.detail.Id,
+      "Desc": that.data.Desc
+    })
+    Api.requset('api/Job/AddComment', {
+        "JobId": that.data.detail.Id,
+        "Desc": that.data.Desc
+      }, 'POST')
+      .then(res => {
+        console.log(res)
+        if (res.data.Code == 200) {
+          that.setData({
+            showInp: false,
+            Desc: ''
+          })
+          this.getListData()
         }
       })
   },

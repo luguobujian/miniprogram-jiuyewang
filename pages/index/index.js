@@ -91,9 +91,9 @@ Page({
         new Promise((resolve, reject) => {
           if (r.data.Code == 200) {
             if (r.data.Data.Status == 1) {
-              wx.navigateTo({
-                url: '../bind/bind',
-              })
+              // wx.navigateTo({
+              //   url: '../bind/bind',
+              // })
             } else {
               app.globalData.token = r.data.Data.Token
               resolve(r.data.Data.Token)
@@ -172,6 +172,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
+    this.getIndexData()
     this.getData()
   },
 })

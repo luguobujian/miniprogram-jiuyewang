@@ -29,7 +29,9 @@
     "pages/addJobs/addJobs",
     "pages/login/login",
     "pages/bind/bind",
-    "pages/editMyExpect/editMyExpect"
+    "pages/editMyExpect/editMyExpect",
+    "pages/simpleShow/simpleShow",
+    "pages/welfare/welfare"
   ],
   "window": {
     "backgroundTextStyle": "light",

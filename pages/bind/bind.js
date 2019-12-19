@@ -39,6 +39,14 @@ Page({
   //获取短信验证码
   getCode(e) {
     let that = this;
+    if (!(/^1[34578]\d{9}$/.test(that.data.phone))) {
+      wx.showToast({
+        title: '手机号格式不正确',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
     Api.requset('api/Auth/SendVCode', {
         "MobilePhone": that.data.phone,
         "Type": 0
@@ -47,6 +55,12 @@ Page({
         console.log(res)
         if (res.data.Code == 200) {
           that.timer()
+        } else {
+          wx.showToast({
+            title: res.data.Msg,
+            icon: 'none',
+            duration: 1500
+          })
         }
       })
   },
@@ -77,6 +91,22 @@ Page({
   //保存
   save(e) {
     let that = this
+    if (!(/^1[34578]\d{9}$/.test(that.data.phone))) {
+      wx.showToast({
+        title: '手机号格式不正确',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
+    if (!this.data.code) {
+      wx.showToast({
+        title: '请输入验证码',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
     console.log('手机号: ' + this.data.phone);
     console.log('验证码: ' + this.data.code);
     Api.requset('api/Auth/Bind', {

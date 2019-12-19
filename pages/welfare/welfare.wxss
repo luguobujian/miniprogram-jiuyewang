@@ -1,0 +1,18 @@
+/* pages/welfare/welfare.wxss */
+
+.item-box {
+  padding: 25rpx;
+}
+
+.item {
+  font-size: 28rpx;
+  padding: 8rpx 30rpx;
+  background-color: #fff;
+  margin: 10rpx;
+}
+
+.item.active {
+  color: #3994e5;
+  background: rgba(235, 244, 252, 1);
+  border: 1px solid rgba(57, 148, 229, 1);
+}

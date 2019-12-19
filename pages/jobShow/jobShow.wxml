@@ -20,12 +20,12 @@
     </view>
     <view class="top-company">
       <view>
-        <view class="lr-box clearfix">
+        <view class="lr-box clearfix" data-id="{{detail.Company.Id}}" bindtap="goCompanyPage">
           <view class="left-box fl">
             <view>{{detail.Company.Name}}</view>
             <view class="simple-title">{{detail.Company.ScopeText}}
               <view class="vertical"></view>{{detail.Company.Profession}}
-              <view class="vertical"></view>{{detail.Company.JobCount}}在招职位
+              <view class="vertical"></view>{{detail.Company.JobCount}}个在招职位
             </view>
           </view>
           <view class="right-box fr">
@@ -47,12 +47,12 @@
         </view>
       </view>
     </view>
-    <view wx:if="{{list.length > 0}}" class="liuyan">
+    <view class="liuyan">
       <view class="ly-title-box clearfix">
         <view class="fl">全部留言({{list.length}})</view>
-        <view wx:if="{{role == 1}}" class="fr">我要留言</view>
+        <view wx:if="{{role == 1}}" class="fr {{showInp? 'blueCole': ''}}" bindtap="bindShowInp">我要留言</view>
       </view>
-      <view>
+      <view wx:if="{{list.length > 0}}">
         <view wx:for="{{list}}" wx:for-item="listItem" wx:key="{{listItem.Id}}" class="item-list clearfix">
           <view class="avatar-box fl">
             <image src="{{listItem.AvatarUrl}}"></image>
@@ -81,6 +81,12 @@
           <button bindtap="save">申请职位</button>
         </view>
       </view>
+    </view>
+    <view wx:if="{{showInp}}" class="footer add-some-box clearfix">
+      <view class="inp-box fl">
+        <input value="{{Desc}}" bindinput="bindDescInput"></input>
+      </view>
+      <view class="fl btn" bindtap="saveComment">发布</view>
     </view>
   </view>
 </view>

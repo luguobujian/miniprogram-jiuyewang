@@ -12,13 +12,15 @@
               {{detail.WorkExperienceText}}
               <view class="vertical"></view>
               {{detail.EducationText}}
+              <view class="vertical"></view>
+              {{detail.SexText}}
             </view>
           </view>
           <view class="contact clearfix">
             <view class="tel-box fl">
               <image src="../../image/tel.png"></image>{{detail.MobilePhone}}
             </view>
-            <view class="fl">
+            <view class="email-box fl">
               <image src="../../image/email.png"></image>{{detail.Email}}
             </view>
           </view>
@@ -61,7 +63,7 @@
         <view class="second-title">{{item.School}}</view>
         <view class="second-date">{{item.StartDate}}-{{item.EndDate}}</view>
         <view class="c-con-c c">
-          本性 {{item.Profession}}
+          {{}} {{item.Profession}}
         </view>
       </view>
     </view>

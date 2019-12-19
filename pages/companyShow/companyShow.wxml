@@ -37,7 +37,7 @@
           </view>
         </view>
         <view wx:if="{{showC == 1}}" class="list-box">
-          <view wx:for="{{jobs}}" wx:key="{{item.Id}}" class="item-list">
+          <view wx:for="{{jobs}}" wx:key="{{item.Id}}" data-id="{{item.Id}}" class="item-list" bindtap="goNextPage">
             <view class="lr-box clearfix">
               <view class="item-list-left fl" bindtap="goNextPage">
                 <view class="title">{{item.Name}}</view>

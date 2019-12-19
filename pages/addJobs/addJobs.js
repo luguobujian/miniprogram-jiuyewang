@@ -77,17 +77,22 @@ Page({
   },
   save: function() {
     let that = this
-    console.log({
-      "Name": that.data.Name,
-      "Scope": that.data.Scope,
-      "WorkExperience": that.data.WorkExperience,
-      "Education": that.data.Education,
-      "Salary": that.data.Salary,
-      "Tag": that.data.Tag,
-      "Desc": that.data.Desc,
-      "PositionId": that.data.array5[that.data.PositionId].Id,
-      "ProfessionId": that.data.array6[that.data.ProfessionId].Id
-    })
+    if (!that.data.Name) {
+      wx.showToast({
+        title: '请输入职位名称',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
+    if (!that.data.Desc) {
+      wx.showToast({
+        title: '请输入工作内容',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
     Api.requset('api/Job/Add', {
         "Name": that.data.Name,
         "Scope": that.data.Scope,
@@ -101,6 +106,11 @@ Page({
       }, "POST")
       .then(res => {
         if (res.data.Code === 200) {
+          wx.showToast({
+            title: '发布成功，请等待后台审核~',
+            icon: 'none',
+            duration: 1500
+          })
           const pages = getCurrentPages()
           const prePage = pages[pages.length - 2];
           prePage.getData(that.data.ResumeId)
@@ -134,6 +144,11 @@ Page({
           array6: res.data.Data
         })
       })
+  },
+  getNextPage: function() {
+    wx.navigateTo({
+      url: '../welfare/welfare',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

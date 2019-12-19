@@ -53,10 +53,11 @@ Page({
   chsBusinessLicense: function() {
     let that = this
     wx.chooseImage({
+      count: 1,
       success(res) {
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'http://xqjyw.lel.cn/api/Upload/Index', //仅为示例，非真实的接口地址
+          url: 'https://ssl.lel.cn/api/Upload/Index', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success(res) {
@@ -74,10 +75,11 @@ Page({
   addImgs: function() {
     let that = this
     wx.chooseImage({
+      count: 1,
       success(res) {
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'http://xqjyw.lel.cn/api/Upload/Index', //仅为示例，非真实的接口地址
+          url: 'https://ssl.lel.cn/api/Upload/Index', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success(res) {
@@ -107,6 +109,11 @@ Page({
       .then(res => {
         console.log(res)
         if (res.data.Code === 200) {
+          wx.showToast({
+            title: '保存成功',
+            icon: 'none',
+            duration: 1500
+          })
           const pages = getCurrentPages()
           const prePage = pages[pages.length - 2];
           prePage.getData()

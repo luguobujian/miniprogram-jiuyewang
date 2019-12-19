@@ -50,6 +50,10 @@ page, .container {
   margin-right: 49rpx;
 }
 
+.tel-box image, .email-box image {
+  margin-right: 14rpx;
+}
+
 .top-bottom {
   font-size: 28rpx;
   padding: 20rpx 0;

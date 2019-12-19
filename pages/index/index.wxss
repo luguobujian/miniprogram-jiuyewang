@@ -21,6 +21,14 @@
   margin-top: 200px;
 } */
 
+.page-section {
+  background-color: #f5f5f5;
+}
+
+.bgf {
+  background-color: #fff;
+}
+
 swiper {
   width: 710rpx;
   height: 300rpx;
@@ -140,7 +148,7 @@ swiper {
 
 .item-list {
   background: #f5f5f5;
-  border-bottom: 1rpx solid #fff;
+  border-bottom: 1rpx solid rgba(153, 153, 153, 0);
 }
 
 .lr-box {

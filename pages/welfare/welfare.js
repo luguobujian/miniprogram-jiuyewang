@@ -1,4 +1,4 @@
-// pages/companyShow/companyShow.js
+// pages/welfare/welfare.js
 import Api from '../../api/api.js'
 Page({
 
@@ -6,43 +6,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showC: 0,
-    detail: '',
-    tag: [],
-    jobs: ''
+    lists: ''
   },
-  switchNav: function(e) {
-    this.setData({
-      showC: e.currentTarget.dataset.s
-    })
-  },
-  goNextPage: function (e) {
-    wx.navigateTo({
-      url: '../jobShow/jobShow?id=' + e.currentTarget.dataset.id,
-    })
+  chooseItem: function () {
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.getData()
+  },
+  getData: function() {
     let that = this
-    Api.requset('api/Company/Detail/' + options.id)
+    Api.requset('api/Category/PositionTagList')
       .then(res => {
         console.log(res)
         that.setData({
-          detail: res.data.Data,
-          tag: res.data.Data.Tag && res.data.Data.Tag.split(',')
-        })
-      })
-
-    Api.requset('api/Job/CompanyJobList/' + options.id)
-      .then(res => {
-        that.setData({
-          jobs: res.data.Data
+          lists: res.data.Data
         })
       })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

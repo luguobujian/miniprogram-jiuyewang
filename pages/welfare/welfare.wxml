@@ -1,0 +1,6 @@
+<!--pages/welfare/welfare.wxml-->
+<view class="container">
+  <view class="item-box clearfix">
+    <view wx:for="{{lists}}" wx:for-index="key" wx:for-item="value" data-value='{{ item.value }}' data-key='{{ item.key }}' class="item fl" bindtap='chooseItem'>{{value}}</view>
+  </view>
+</view>

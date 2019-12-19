@@ -4,7 +4,7 @@
     <view class="weui-cells weui-cells_after-title clearfix">
       <view class="weui-cell weui-cell_input fl">
         <image class="search-ico" src="../../image/search.png"></image>
-        <input class="weui-input" value="{{s}}" auto-focus placeholder="请输入关键词" bindinput="bindSearchInput" />
+        <input class="weui-input" value="{{s}}" placeholder="请输入关键词" bindinput="bindSearchInput" />
         <view wx:if="{{clear}}" class="clear-btn" bindtap="bindClear">×</view>
       </view>
       <view wx:if="{{role == 2}}" class="weui-r fr" bindtap="goAddSimple">
@@ -19,7 +19,7 @@
       <view class="item-con">
         {{item.Desc}}
       </view>
-      <view class="some-time">发布时间：</view>
+      <view class="some-time">发布时间：{{item.DTime}}</view>
     </view>
   </view>
 </view>

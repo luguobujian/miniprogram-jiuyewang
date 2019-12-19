@@ -33,12 +33,40 @@ Page({
   },
   save: function() {
     let that = this
-    console.log({
-      "Title": that.data.Title,
-      "Desc": that.data.Desc,
-      "ContactName": that.data.ContactName,
-      "ContactPhone": that.data.ContactPhone
-    })
+    if (!that.data.Title) {
+      wx.showToast({
+        title: '请输入标题',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
+
+    if (!this.data.ContactName) {
+      wx.showToast({
+        title: '请输入联系人',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
+    if (!this.data.ContactPhone) {
+      wx.showToast({
+        title: '请输入联系方式',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
+
+    if (!this.data.Desc) {
+      wx.showToast({
+        title: '请输入职位具体描述',
+        icon: 'none',
+        duration: 1500
+      })
+      return
+    }
     Api.requset('api/Interact/Add', {
         "Title": that.data.Title,
         "Desc": that.data.Desc,
@@ -48,6 +76,11 @@ Page({
       .then(res => {
         console.log(res)
         if (res.data.Code === 200) {
+          wx.showToast({
+            title: '发布成功，请等待后台审核~',
+            icon: 'none',
+            duration: 1500
+          })
           const pages = getCurrentPages()
           const prePage = pages[pages.length - 2];
           prePage.getData("")

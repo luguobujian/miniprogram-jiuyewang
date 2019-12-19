@@ -1,7 +1,7 @@
 const app = getApp()
 class Api {
   constructor() {
-    this.baseUrl = 'http://xqjyw.lel.cn/'
+    this.baseUrl = 'https://ssl.lel.cn/'
     this.header = {}
     this.requset = this.requset.bind(this)
   }

@@ -52,6 +52,14 @@ Page({
         that.setData({
           dataList: res.data.PagedList.Data
         })
+        if (res.data.PagedList.Data.length == 0) {
+          wx.showToast({
+            title: '暂无相关职位信息',
+            icon: 'none',
+            duration: 1500
+          })
+          return
+        }
       })
   },
   /**

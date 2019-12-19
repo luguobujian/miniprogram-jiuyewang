@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
 
-  <view class="page-section">
+  <view class="page-section bgf">
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input" bindtap="goSearchPage">
         <image class="search-ico" src="../../image/search.png"></image>
@@ -10,7 +10,7 @@
     </view>
   </view>
 
-  <view class="page-section page-section-spacing swiper">
+  <view class="page-section page-section-spacing swiper bgf">
     <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{Slide}}" wx:key="*this">
         <swiper-item>
