@@ -125,6 +125,21 @@
   margin-left: 25rpx;
   margin-bottom: 25rpx;
   border: 1rpx dashed rgba(204, 204, 204, 1);
+  position: relative;
+}
+
+.close-ico {
+  width: 36rpx;
+  height: 36rpx;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 36rpx;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -10rpx;
+  right: 0;
 }
 
 .textarea-box .img-box image {

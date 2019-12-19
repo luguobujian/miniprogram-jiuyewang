@@ -50,6 +50,16 @@ Page({
       Scope: e.detail.value
     })
   },
+  bindDelImg: function(e) {
+    let i = e.currentTarget.dataset.index
+    console.log(this.data.Imgs)
+    let s = this.data.Imgs
+    s.splice(i, 1)
+    console.log(s)
+    this.setData({
+      Imgs: s
+    })
+  },
   chsBusinessLicense: function() {
     let that = this
     wx.chooseImage({

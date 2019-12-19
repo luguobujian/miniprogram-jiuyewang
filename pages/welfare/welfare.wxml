@@ -1,6 +1,9 @@
 <!--pages/welfare/welfare.wxml-->
 <view class="container">
   <view class="item-box clearfix">
-    <view wx:for="{{lists}}" wx:for-index="key" wx:for-item="value" data-value='{{ item.value }}' data-key='{{ item.key }}' class="item fl" bindtap='chooseItem'>{{value}}</view>
+    <view wx:for="{{lists}}" wx:key="{{item.id}}" data-index="{{index}}" data-index="{{index}}" data-value='{{ item.value }}' data-key='{{ item.id }}' class="item fl {{item.selected? 'active': ''}}" bindtap='chooseItem'>{{item.value}}</view>
+  </view>
+  <view class="btn-box">
+    <button class="save-btn" bindtap="save">保存</button>
   </view>
 </view>

@@ -6,8 +6,9 @@
 
 .item {
   font-size: 28rpx;
-  padding: 8rpx 30rpx;
+  padding: 6rpx 30rpx;
   background-color: #fff;
+  border: 1px solid #fff;
   margin: 10rpx;
 }
 
@@ -15,4 +16,33 @@
   color: #3994e5;
   background: rgba(235, 244, 252, 1);
   border: 1px solid rgba(57, 148, 229, 1);
+}
+
+.btn-box {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 26rpx;
+  z-index: 999;
+}
+
+.btn-box button {
+  /* display: inline-block; */
+  font-weight: normal;
+  line-height: 88rpx;
+  padding: 0;
+}
+
+.btn-box .save-btn {
+  width: 700rpx;
+  color: #fff;
+  font-weight: normal;
+  background: #3994e5;
+}
+
+.btn-box .del-btn {
+  width: 140rpx;
+  background: #eee;
+  margin-right: 10rpx;
+  margin-left: 20rpx;
 }

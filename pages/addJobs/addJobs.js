@@ -18,7 +18,8 @@ Page({
     "WorkExperience": 0,
     "Education": 0,
     "Salary": 0,
-    "Tag": "1,2",
+    "Tag": "",
+    "TagText": "",
     "Desc": "",
     "PositionId": 0,
     "ProfessionId": 1

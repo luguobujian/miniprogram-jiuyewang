@@ -65,6 +65,7 @@
         <view class="img-b">
           <view wx:if="{{Imgs.length > 0}}" wx:for="{{Imgs}}" class="img-box">
             <image src="{{item}}" class="img"></image>
+            <view class="close-ico" data-index="{{index}}" bindtap="bindDelImg">×</view>
           </view>
           <view wx:if="{{Imgs.length < 9}}" class="img-box" bindtap="addImgs">
             <image src="../../image/plus.png"></image>

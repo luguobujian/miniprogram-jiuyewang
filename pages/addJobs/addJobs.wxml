@@ -98,7 +98,7 @@
       <view class="item-inp-tit fl">福利待遇</view>
       <view class="item-inp-box item-inp-picker fl">
         <view class="picker">
-          {{date}}
+          {{TagText}}
         </view>
       </view>
       <view class="go-ico fl">
