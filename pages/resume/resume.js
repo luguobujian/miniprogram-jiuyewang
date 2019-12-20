@@ -9,12 +9,49 @@ Page({
   data: {
     sort: 0,
     dataList: '',
-    Limit: 10
+    showChoose: '职位筛选',
+    PositionId: '',
+    Limit: 10,
+
+    chooseList: [],
+    multiple: false
+  },
+  choose(e) {
+    let arr = e.detail.chooseArray
+    if (arr.length == 0) {
+      this.setData({
+        showChoose: '职位筛选',
+        PositionId: '',
+      })
+      this.getData()
+      return
+    }
+    let PositionIds = []
+    let showChooses = []
+    arr.forEach((item, value) => {
+      PositionIds.push(item.PositionId)
+      showChooses.push(item.Name)
+    })
+    this.setData({
+      showChoose: showChooses.join(','),
+      PositionId: PositionIds.join(','),
+      chooseArray: e.detail.chooseArray
+    })
+    this.getData()
+    console.log(this.data.PositionId);
+    console.log(this.data.showChoose);
   },
   navSwitch: function(e) {
-    this.setData({
-      sort: e.currentTarget.dataset.sort
-    })
+    if (this.data.sort == 0) {
+      this.setData({
+        sort: 1
+      })
+    } else {
+      this.setData({
+        sort: 0
+      })
+    }
+
     this.getData()
   },
   goResumeShow: function(e) {
@@ -29,14 +66,25 @@ Page({
    */
   onLoad: function(options) {
     this.getData()
+    this.getPositionList()
   },
   getData: function() {
     let that = this
-    Api.requset('api/Resume/List?Limit=' + that.data.Limit + '&Sort=' + that.sort)
+    Api.requset('api/Resume/List?Limit=' + that.data.Limit + '&Sort=' + that.data.sort + '&PositionId=' + that.data.PositionId)
       .then(res => {
         console.log(res)
         that.setData({
           dataList: res.data.PagedList.Data
+        })
+      })
+  },
+  getPositionList: function() {
+    let that = this
+    Api.requset('api/Category/PositionList?CategoryId=0')
+      .then(res => {
+        console.log(res)
+        that.setData({
+          chooseList: res.data.Data
         })
       })
   },

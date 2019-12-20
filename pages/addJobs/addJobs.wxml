@@ -110,7 +110,7 @@
       <view class="tit">工作内容
         <text>（请详细描述该职位，可填写职位要求，岗位职责等。）</text> </view>
       <view>
-        <textarea value="{{bindDescInput}}" bindinput="bindDescInput"></textarea>
+        <textarea value="{{bindDescInput}}" maxlength="-1" bindinput="bindDescInput"></textarea>
       </view>
     </view>
 
@@ -126,8 +126,8 @@
       </view>
     </view> -->
 
-    <view class="btn-box">
+    <cover-view class="btn-box">
       <button class="save-btn" bindtap="save">保存</button>
-    </view>
+    </cover-view>
   </view>
 </view>

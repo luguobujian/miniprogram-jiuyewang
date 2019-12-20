@@ -12,8 +12,8 @@
           <view class="vertical"></view> {{detail.WorkExperienceText}}
           <view class="vertical"></view> {{detail.EducationText}}
         </view>
-        <view class="welfare-box">
-          <view class="welfare-tag">五险一金</view>
+        <view wx:if="{{tag.length > 0}}" class="welfare-box clearfix">
+          <view wx:for="{{tag}}" class="welfare-tag fl">{{item}}</view>
         </view>
       </view>
       <view></view>

@@ -9,7 +9,13 @@ Page({
   data: {
     lists: ''
   },
-
+  goResumeShow: function(e) {
+    console.log(e)
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../resumeShow/resumeShow?id=' + id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

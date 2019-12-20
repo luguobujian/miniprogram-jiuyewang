@@ -44,22 +44,28 @@
 }
 
 .item-con {
+  border: 1rpx solid #fff;
+  background: rgba(245, 245, 245, 1);
+}
+
+.item-con view {
   width: 255rpx;
-  height: 275rpx;
+  height: 284rpx;
   font-size: 24rpx;
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
   line-height: 36rpx;
-  background: rgba(245, 245, 245, 1);
-  padding: 23rpx 24rpx 22rpx 21rpx;
-  margin: 0 auto;
+  margin: 23rpx 24rpx 22rpx 21rpx;
+  /* margin: 0 auto; */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 8;
 }
+
+/* .item-con */
 
 .some-time {
   color: #999;

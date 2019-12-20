@@ -141,3 +141,7 @@ page, .container {
   margin-left: -10rpx;
   border-radius: 4rpx;
 }
+
+.ilrm {
+  padding-bottom: 10rpx;
+}

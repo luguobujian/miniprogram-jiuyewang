@@ -61,7 +61,7 @@
     <view class="item-textarea">
       <view class="title">公司具体描述</view>
       <view class="textarea-box">
-        <textarea value="{{Introduce}}" bindinput="bindIntroduceInput"></textarea>
+        <textarea value="{{Introduce}}" maxlength="-1" bindinput="bindIntroduceInput"></textarea>
         <view class="img-b">
           <view wx:if="{{Imgs.length > 0}}" wx:for="{{Imgs}}" class="img-box">
             <image src="{{item}}" class="img"></image>
@@ -73,9 +73,9 @@
         </view>
       </view>
     </view>
-
-    <view class="btn-box">
+    <cover-view class="btn-box">
       <button class="save-btn" bindtap="save">保存</button>
-    </view>
+    </cover-view>
+
   </view>
 </view>

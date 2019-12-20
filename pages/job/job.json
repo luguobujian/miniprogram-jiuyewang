@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "职位",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "right-picker": "../../component/right-picker/right-picker"
+  }
 }

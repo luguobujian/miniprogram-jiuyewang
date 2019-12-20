@@ -2,15 +2,20 @@
 <view class="container">
   <view>
     <view class="top-sort">
-      <view class="top-sort-classes {{sort == 0? 'active': ''}}" data-sort="0" bindtap="navSwitch">默认排序</view>
-      <view class="top-sort-classes {{sort == 1? 'active': ''}}" data-sort="1" bindtap="navSwitch">更新时间</view>
-      <view class="top-sort-classes {{sort == 2? 'active': ''}}" data-sort="2" bindtap="navSwitch">岗位</view>
-      <view class="top-sort-classes {{sort == 3? 'active': ''}}" data-sort="3" bindtap="navSwitch">年龄</view>
+      <!-- <view class="top-sort-classes {{sort == 0? 'active': ''}}" data-sort="0" bindtap="navSwitch">默认排序</view> -->
+      <view class="top-sort-classes active" data-sort="1" bindtap="navSwitch">
+        更新时间
+        <image wx:if="{{sort == 1}}" class="sico" src="../../image/sprites_02.png"></image>
+        <image wx:if="{{sort == 0}}" class="sico" src="../../image/sprites_03.png"></image>
+      </view>
+      <right-picker class="top-sort-classes" bind:chooseEvent='choose' chooseId='{{PositionId}}' showChoose='{{ showChoose }}' chooseList='{{ chooseList }}' multiple='{{ multiple }}'></right-picker>
+      <!-- <view class="top-sort-classes {{sort == 2? 'active': ''}}" data-sort="2" bindtap="navSwitch">岗位</view> -->
+      <!-- <view class="top-sort-classes {{sort == 3? 'active': ''}}" data-sort="3" bindtap="navSwitch">年龄</view> -->
     </view>
-    <view class="list-box">
+    <view wx:if="{{dataList.length != 0}}" class="list-box">
       <view wx:for="{{dataList}}" wx:key="{{item.Id}}" data-id="{{item.Id}}" class="item-list clearfix" bindtap="goResumeShow">
         <view class="avatar-box fl">
-          <image class="avatar"></image>
+          <image class="avatar" src="{{item.AvatarUrl}}"></image>
         </view>
         <view class="info fl">
           <view class="info-top">
@@ -19,14 +24,18 @@
               <view class="pric fr">{{item.Expect.SalaryText || ''}}</view>
             </view>
             <view class="simple-title">
-              {{item.Address }}
+              {{item.Expect.ScopeText }}
               <view class="vertical"></view>
               {{item.WorkExperienceText }}
               <view class="vertical"></view>
               {{item.EducationText }}
+              <view class="vertical"></view>
+              {{item.Age }}岁
+              <view class="vertical"></view>
+              {{item.SexText }}
             </view>
             <view class="welfare-box">
-              <view class="welfare-tag">3小时前来过</view>
+              <view class="welfare-tag">{{item.LastArriveTime}}</view>
             </view>
           </view>
           <view class="info-bottom">
@@ -35,6 +44,9 @@
           </view>
         </view>
       </view>
+    </view>
+    <view wx:if="{{dataList.length == 0}}" class="nomore">
+      <image src="../../image/zwsj.png"></image>
     </view>
   </view>
 </view>

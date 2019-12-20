@@ -11,7 +11,7 @@
   </view>
   <view wx:if="{{hotList.length > 0}}" class="page-section">
     <view class="hot-box">
-      <view class="hot-title">热门搜索</view>
+      <view class="hot-title">历史搜索</view>
       <view class="hot-tag-box">
         <view wx:for="{{hotList}}" wx:key="*this" class="hot-tag" data-s="{{item.Keywords }}" bindtap="searchThis">{{item.Keywords }}</view>
       </view>

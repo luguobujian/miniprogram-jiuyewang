@@ -31,7 +31,8 @@
     "pages/bind/bind",
     "pages/editMyExpect/editMyExpect",
     "pages/simpleShow/simpleShow",
-    "pages/welfare/welfare"
+    "pages/welfare/welfare",
+    "component/right-picker/right-picker"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -13,6 +13,8 @@
               <view class="vertical"></view>
               {{detail.EducationText}}
               <view class="vertical"></view>
+              {{detail.Age}}岁
+              <view class="vertical"></view>
               {{detail.SexText}}
             </view>
           </view>

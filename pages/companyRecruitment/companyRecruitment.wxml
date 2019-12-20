@@ -2,7 +2,7 @@
 <view class="container">
   <view>
     <view wx:if="{{lists.length > 0}}" class="list-box">
-      <view wx:for="{{lists}}" wx:key="{{item.Id}}" class="item-list clearfix" bindtap="goResumeShow">
+      <view wx:for="{{lists}}" wx:key="{{item.Id}}" class="item-list clearfix" data-id="{{item.Id}}" bindtap="goResumeShow">
         <view class="avatar-box fl">
           <image class="avatar" src="{{item.AvatarUrl }}"></image>
         </view>
@@ -18,6 +18,10 @@
               {{item.WorkExperienceText}}
               <view class="vertical"></view>
               {{item.EducationText}}
+              <view class="vertical"></view>
+              {{item.Age }}岁
+              <view class="vertical"></view>
+              {{item.SexText }}
             </view>
             <!-- <view class="welfare-box">
               <view class="welfare-tag">3小时前来过</view>

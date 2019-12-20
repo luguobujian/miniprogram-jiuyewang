@@ -13,11 +13,13 @@
     </view>
   </view>
   <view class="list-box">
-    <view wx:for="{{dataList}}" wx:key="{{item.id}}" class="item-list">
+    <view wx:for="{{dataList}}" wx:key="{{item.Id}}" data-id="{{item.Id}}" class="item-list" bindtap="goNextPage">
       <view class="item-title">{{item.Title}}</view>
       <view class="simple-title">发布人：{{item.Publisher}}</view>
       <view class="item-con">
-        {{item.Desc}}
+        <view>
+          {{item.Desc}}
+        </view>
       </view>
       <view class="some-time">发布时间：{{item.DTime}}</view>
     </view>

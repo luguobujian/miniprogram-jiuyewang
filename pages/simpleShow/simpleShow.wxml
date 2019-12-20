@@ -1,2 +1,76 @@
 <!--pages/simpleShow/simpleShow.wxml-->
-<text>pages/simpleShow/simpleShow.wxml</text>
+<view class="container">
+  <view>
+    <view class="top-job">
+      <view>
+        <view class="clearfix">
+          <view class="fl">{{detail.Publisher}}</view>
+          <view class="pric fr">{{detail.Title}}</view>
+        </view>
+        <view class="simple-title">
+          联系人：{{detail.ContactName}}
+        </view>
+        <view class="simple-title">
+          联系人方式：{{detail.ContactPhone}}
+        </view>
+        <view class="simple-title">
+          发布时间：{{detail.DTime}}
+        </view>
+      </view>
+    </view>
+    <view class="job-content">
+      <view>
+        <view class="job-content-title">工作内容</view>
+        <view class="job-con">
+          <view>
+            {{detail.Desc}}
+          </view>
+        </view>
+        <view wx:if="{{detail.Company.Address}}" class="addr-box">
+          <image src="../../image/addr.png"></image>{{detail.Company.Address}}
+        </view>
+      </view>
+    </view>
+    <view class="liuyan">
+      <view class="ly-title-box clearfix">
+        <view class="fl">互动评论({{list.length}})</view>
+        <view class="fr {{showInp? 'blueCole': ''}}" bindtap="bindShowInp">我要留言</view>
+      </view>
+      <view wx:if="{{list.length > 0}}">
+        <view wx:for="{{list}}" wx:for-item="listItem" wx:key="{{listItem.Id}}" class="item-list clearfix">
+          <view class="avatar-box fl">
+            <image src="{{listItem.AvatarUrl}}"></image>
+          </view>
+          <view class="item-list-right fr">
+            <view class="ilrt clearfix">
+              <view class="fl">{{listItem.UserName}}</view>
+              <view class="fr">05-04 14:24</view>
+            </view>
+            <view class="ilrm">{{listItem.Desc}}</view>
+            <view wx:for="{{listItem.Reply}}" class="ilrb">
+              <view class="ilrbl">公司回复：</view>
+              <view class="ilrbr">{{item.Desc}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view wx:if="{{role == 1}}" class="footer">
+      <view class="clearfix">
+        <view class="share-box fl">
+          <image src="../../image/share.png"></image>
+          <view>分享</view>
+        </view>
+        <view class="btn-box fl">
+          <button bindtap="save">申请职位</button>
+        </view>
+      </view>
+    </view> -->
+    <view wx:if="{{showInp}}" class="footer add-some-box clearfix">
+      <view class="inp-box fl">
+        <input value="{{Desc}}" bindinput="bindDescInput"></input>
+      </view>
+      <view class="fl btn" bindtap="saveComment">发布</view>
+    </view>
+  </view>
+</view>

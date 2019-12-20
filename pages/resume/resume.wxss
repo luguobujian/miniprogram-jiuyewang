@@ -11,6 +11,7 @@ page, .container {
   width: 100%;
   background-color: #fff;
   position: fixed;
+  top: 1rpx;
 }
 
 .top-sort-classes {
@@ -23,6 +24,12 @@ page, .container {
 
 .top-sort-classes.active {
   color: #3994e5;
+}
+
+.sico {
+  width: 22rpx;
+  height: 22rpx;
+  vertical-align: middle;
 }
 
 .list-box {

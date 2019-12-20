@@ -30,6 +30,11 @@ Page({
     })
     this.getData("")
   },
+  goNextPage: function(e) {
+    wx.navigateTo({
+      url: '../simpleShow/simpleShow?id=' + e.currentTarget.dataset.id,
+    })
+  },
   goAddSimple: function() {
     wx.navigateTo({
       url: '../addSimple/addSimple',
@@ -49,6 +54,7 @@ Page({
     let that = this
     Api.requset('api/Interact/List?Limit=' + that.data.Limit + '&keyword=' + keyword)
       .then(res => {
+        console.log(res)
         that.setData({
           dataList: res.data.PagedList.Data
         })

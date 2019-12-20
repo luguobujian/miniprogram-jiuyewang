@@ -1,0 +1,17 @@
+<!--component/right-picker/right-picker.wxml-->
+<view class='showPicker' bindtap='showPicker'>{{showChoose}}</view>
+
+<cover-view class='{{ showPicker ? ".shade-container" : "hide-container" }}' wx:if='{{ firstShow }}' catchtouchmove="ture">
+  <cover-view class='left-shade' bindtap='hidePicker'></cover-view>
+  <cover-view class='right-choose'>
+    <cover-view class='button-container'>
+      <cover-view class='cancal' bindtap='cancal'>重置</cover-view>
+      <cover-view class='sure' bindtap='sure'>确定</cover-view>
+    </cover-view>
+    <cover-view class='picker-container'>
+      <cover-view class='picker-item {{ item.flag ? "picker-item-choose" : "" }}' wx:for='{{ chooseList }}' wx:key='index' wx:for-item='item' bindtap='chooseItem' data-value='{{ item.PositionId }}'>
+        {{ item.Name }}
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>

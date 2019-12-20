@@ -2,11 +2,17 @@
 <view class="container">
   <view>
     <view class="top-sort">
-      <view class="top-sort-classes {{sort == 0? 'active': ''}}" data-sort="0" bindtap="navSwitch">默认排序</view>
-      <view class="top-sort-classes {{sort == 1? 'active': ''}}" data-sort="1" bindtap="navSwitch">更新时间</view>
-      <view class="top-sort-classes {{sort == 2? 'active': ''}}" data-sort="2" bindtap="navSwitch">岗位</view>
+      <!-- <view class="top-sort-classes {{sort == 0? 'active': ''}}" data-sort="0" bindtap="navSwitch">默认排序</view> -->
+      <view class="top-sort-classes active" data-sort="1" bindtap="navSwitch">
+        更新时间
+        <image wx:if="{{sort == 1}}" class="sico" src="../../image/sprites_02.png"></image>
+        <image wx:if="{{sort == 0}}" class="sico" src="../../image/sprites_03.png"></image>
+      </view>
+      <!-- <view class="top-sort-classes {{sort == 2? 'active': ''}}" data-sort="2" bindtap="navSwitch">岗位</view> -->
+
+      <right-picker class="top-sort-classes" bind:chooseEvent='choose' chooseId='{{PositionId}}' showChoose='{{ showChoose }}' chooseList='{{ chooseList }}' multiple='{{ multiple }}'></right-picker>
     </view>
-    <view class="list-box">
+    <view wx:if="{{dataList.length != 0}}" class="list-box">
       <view wx:for="{{dataList}}" wx:key="{{item.Id}}" class="item-list">
         <view class="lr-box clearfix">
           <view class="item-list-left fl" data-id="{{item.Id}}" bindtap="goNextPage">
@@ -26,6 +32,9 @@
           </view>
         </view>
       </view>
+    </view>
+    <view wx:if="{{dataList.length == 0}}" class="nomore">
+      <image src="../../image/zwsj.png"></image>
     </view>
   </view>
 </view>

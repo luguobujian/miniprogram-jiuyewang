@@ -9,6 +9,7 @@ Page({
   data: {
     role: '',
     showInp: false,
+    tag: '',
     Desc: '',
     detail: '',
     list: ''
@@ -50,7 +51,8 @@ Page({
       .then(res => {
         console.log(res)
         that.setData({
-          detail: res.data.Data
+          detail: res.data.Data,
+          tag: res.data.Data.Company.Tag && res.data.Data.Company.Tag.split(',')
         })
         that.getListData()
       })

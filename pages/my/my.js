@@ -65,6 +65,23 @@ Page({
       return
     }
   },
+  bindRefreshResume: function() {
+    let that = this
+    console.log(that.data.sort)
+    console.log(that.data.PositionId)
+    Api.requset('api/Resume/Refresh', {
+        Id: that.data.userInfo.ResumeId
+      }, 'POST')
+      .then(res => {
+        if (res.data.Code == 200) {
+          wx.showToast({
+            title: '刷新在线简历成功',
+            icon: 'none',
+            duration: 1500
+          })
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -78,7 +95,7 @@ Page({
     // } else {
     //   this.getData()
     // }
-
+    // console.log(app.globalData.userInfo)
   },
   getData: function() {
     let that = this

@@ -7,8 +7,8 @@
           <image src="{{userInfo.AvatarUrl}}"></image>
         </view>
         <view class="user-right fl">
-          <view class="user-right-t" bindtap="goLogin">{{userInfo.Name || '未登录'}}</view>
-          <view class="user-right-b">
+          <view class="user-right-t" bindtap="goLogin">{{userInfo.Name || '未设置'}}</view>
+          <view class="user-right-b" bindtap="bindRefreshResume">
             <image src="../../image/refresh.png"></image>建议更新在线简历
           </view>
         </view>
