@@ -57,6 +57,16 @@ Page({
 
   save: function() {
     let that = this
+    let oDate1 = new Date(that.data.StartDate).getTime();
+    let oDate2 = new Date(that.data.EndDate).getTime()
+    if (oDate1 > oDate2) {
+      wx.showToast({
+        title: '离职时间不能小于入职时间',
+        icon: 'none',
+        duration: 2200
+      })
+      return
+    }
     if (that.data.ae === 'add') {
       Api.requset('api/Resume/WorkExperienceAdd', {
           "ResumeId": that.data.ResumeId,
@@ -103,6 +113,9 @@ Page({
       this.setData({
         ae: 'add',
         ResumeId: options.id
+      })
+      wx.setNavigationBarTitle({
+        title: '添加工作经历',
       })
     } else {
       this.setData({

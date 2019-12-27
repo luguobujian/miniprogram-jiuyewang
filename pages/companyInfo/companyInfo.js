@@ -122,7 +122,7 @@ Page({
           wx.showToast({
             title: '保存成功',
             icon: 'none',
-            duration: 1500
+            duration: 2200
           })
           const pages = getCurrentPages()
           const prePage = pages[pages.length - 2];

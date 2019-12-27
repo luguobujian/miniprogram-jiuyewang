@@ -20,7 +20,7 @@ Page({
       wx.showToast({
         title: '你什么都没输入',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }

@@ -18,7 +18,8 @@
           <view class="item-list-left fl" data-id="{{item.Id}}" bindtap="goNextPage">
             <view class="title">{{item.Name}}</view>
             <view class="simple-title">
-              {{item.ScopeText}}
+              <view> {{item.ScopeText}}</view>
+
               <view class="vertical"></view>
               {{item.WorkExperienceText}}
               <view class="vertical"></view>

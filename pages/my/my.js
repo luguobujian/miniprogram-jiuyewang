@@ -76,8 +76,8 @@ Page({
         if (res.data.Code == 200) {
           wx.showToast({
             title: '刷新在线简历成功',
-            icon: 'none',
-            duration: 1500
+            icon: 'success',
+            duration: 2200
           })
         }
       })

@@ -7,6 +7,7 @@
 
 .lr-box {
   padding: 30rpx 28rpx;
+  position: relative;
 }
 
 .item-list-l {
@@ -17,12 +18,19 @@
 .item-list-t {
   line-height: 42rpx;
   margin-top: -5rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .item-list-b {
   color: #999;
   font-size: 24rpx;
   margin-top: 12rpx;
+  position: absolute;
+  bottom: 30rpx;
 }
 
 .item-list-r, .item-list-r image {

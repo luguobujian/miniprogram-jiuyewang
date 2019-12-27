@@ -15,4 +15,7 @@
       </view>
     </view>
   </view>
+  <view wx:if="{{nohave}}" class="nohave">
+    <view>已经到底啦~</view>
+  </view>
 </view>

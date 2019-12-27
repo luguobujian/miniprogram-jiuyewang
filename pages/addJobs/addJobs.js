@@ -82,7 +82,7 @@ Page({
       wx.showToast({
         title: '请输入职位名称',
         icon: 'none',
-        duration: 1500
+        duration: 2000
       })
       return
     }
@@ -90,7 +90,7 @@ Page({
       wx.showToast({
         title: '请输入工作内容',
         icon: 'none',
-        duration: 1500
+        duration: 2000
       })
       return
     }
@@ -109,8 +109,8 @@ Page({
         if (res.data.Code === 200) {
           wx.showToast({
             title: '发布成功，请等待后台审核~',
-            icon: 'none',
-            duration: 1500
+            icon: 'success',
+            duration: 2000
           })
           const pages = getCurrentPages()
           const prePage = pages[pages.length - 2];

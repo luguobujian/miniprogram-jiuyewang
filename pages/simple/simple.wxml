@@ -5,7 +5,9 @@
       <view class="weui-cell weui-cell_input fl">
         <image class="search-ico" src="../../image/search.png"></image>
         <input class="weui-input" value="{{s}}" placeholder="请输入关键词" bindinput="bindSearchInput" />
-        <view wx:if="{{clear}}" class="clear-btn" bindtap="bindClear">×</view>
+        <view wx:if="{{clear}}" class="clear-btn" bindtap="bindClear">
+          <image src="../../image/clear.png"></image>
+        </view>
       </view>
       <view wx:if="{{role == 2}}" class="weui-r fr" bindtap="goAddSimple">
         <image src="../../image/inp-r.png"></image>

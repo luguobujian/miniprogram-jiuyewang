@@ -47,6 +47,17 @@ Page({
   },
   save: function() {
     let that = this
+    let oDate1 = new Date(that.data.StartDate).getTime();
+    let oDate2 = new Date(that.data.EndDate).getTime()
+    if (oDate1 > oDate2) {
+      wx.showToast({
+        title: '毕业时间不能小于入学年份',
+        icon: 'none',
+        duration: 2200
+      })
+      return
+    }
+
     if (that.data.ae === 'add') {
 
       Api.requset('api/Resume/EducationAdd', {
@@ -66,13 +77,21 @@ Page({
           }
         })
     } else {
-      Api.requset('api/Resume/WorkExperienceUpdate', {
+      console.log({
+        "Id": that.data.ae,
+        "School": that.data.School,
+        "Education": that.data.Education,
+        "StartDate": that.data.StartDate,
+        "EndDate": that.data.EndDate,
+        "Profession": that.data.Profession
+      })
+      Api.requset('api/Resume/EducationUpdate', {
           "Id": that.data.ae,
-          "CompanyName": that.data.CompanyName,
-          "Duty": that.data.Duty,
+          "School": that.data.School,
+          "Education": that.data.Education,
           "StartDate": that.data.StartDate,
           "EndDate": that.data.EndDate,
-          "Introduce": that.data.Introduce
+          "Profession": that.data.Profession
         }, "POST")
         .then(res => {
           console.log(res)

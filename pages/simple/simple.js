@@ -62,7 +62,7 @@ Page({
           wx.showToast({
             title: '暂无相关职位信息',
             icon: 'none',
-            duration: 1500
+            duration: 2200
           })
           return
         }

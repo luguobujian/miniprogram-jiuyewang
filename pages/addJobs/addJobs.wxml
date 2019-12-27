@@ -127,7 +127,7 @@
     </view> -->
 
     <cover-view class="btn-box">
-      <button class="save-btn" bindtap="save">保存</button>
+      <button class="save-btn" bindtap="save">发布</button>
     </cover-view>
   </view>
 </view>

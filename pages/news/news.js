@@ -8,7 +8,8 @@ Page({
   data: {
     type: '',
     Limit: 10,
-    dataList: ''
+    dataList: '',
+    nohave: false
   },
   goNextPage: function(e) {
 
@@ -44,11 +45,9 @@ Page({
             dataList: res.data.PagedList.Data
           })
 
-          if (that.data.dataList.length >= res.data.PagedList.Data.length) {
-            wx.showToast({
-              title: '已经到底啦~',
-              icon: 'none',
-              duration: 1500
+          if (that.data.dataList.length >= res.data.PagedList.TotalCount) {
+            that.setData({
+              nohave: 　true
             })
             return
           }

@@ -33,14 +33,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.getData()
+
     this.setData({
       role: app.globalData.role || ''
     })
+    this.getData()
   },
   getData: function() {
     let that = this
-    if (that.data.role === 1) {
+    if (that.data.role == 1) {
       Api.requset('api/Member/CommentList')
         .then(res => {
           console.log(res)

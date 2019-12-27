@@ -38,9 +38,9 @@
       <view>
         <view class="job-content-title">工作内容</view>
         <view class="job-con">
-          <view>
+          <text>
             {{detail.Desc}}
-          </view>
+          </text>
         </view>
         <view wx:if="{{detail.Company.Address}}" class="addr-box">
           <image src="../../image/addr.png"></image>{{detail.Company.Address}}

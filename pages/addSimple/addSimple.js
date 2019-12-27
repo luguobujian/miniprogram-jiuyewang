@@ -37,7 +37,7 @@ Page({
       wx.showToast({
         title: '请输入标题',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -46,7 +46,7 @@ Page({
       wx.showToast({
         title: '请输入联系人',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -54,7 +54,7 @@ Page({
       wx.showToast({
         title: '请输入联系方式',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -63,7 +63,7 @@ Page({
       wx.showToast({
         title: '请输入职位具体描述',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -79,7 +79,7 @@ Page({
           wx.showToast({
             title: '发布成功，请等待后台审核~',
             icon: 'none',
-            duration: 1500
+            duration: 2200
           })
           const pages = getCurrentPages()
           const prePage = pages[pages.length - 2];

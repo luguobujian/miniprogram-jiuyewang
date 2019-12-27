@@ -60,8 +60,14 @@ page, .container {
 
 .simple-title {
   color: #999;
-  font-size: 24rpx;
-  margin-bottom: 20rpx;
+  font-size: 26rpx;
+  text-align: left;
+  margin-bottom: 22rpx;
+  /* background-color: skyblue; */
+}
+
+.simple-title view {
+  display: inline-block;
 }
 
 .simple-title:last-child {
@@ -72,5 +78,5 @@ page, .container {
   color: #999;
   font-size: 26rpx;
   text-align: right;
-  margin-top: 66rpx;
+  margin-top: 60rpx;
 }

@@ -43,7 +43,7 @@ Page({
       wx.showToast({
         title: '手机号格式不正确',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -59,7 +59,7 @@ Page({
           wx.showToast({
             title: res.data.Msg,
             icon: 'none',
-            duration: 1500
+            duration: 2200
           })
         }
       })
@@ -95,7 +95,7 @@ Page({
       wx.showToast({
         title: '手机号格式不正确',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -103,7 +103,7 @@ Page({
       wx.showToast({
         title: '请输入验证码',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -127,7 +127,7 @@ Page({
           wx.showToast({
             title: res.data.Msg,
             icon: 'none',
-            duration: 1500
+            duration: 2200
           })
         }
       })

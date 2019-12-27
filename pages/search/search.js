@@ -39,6 +39,11 @@ Page({
       clear: false
     })
   },
+  goNextPage: function (e) {
+    wx.navigateTo({
+      url: '../jobShow/jobShow?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -62,6 +67,14 @@ Page({
         that.setData({
           lists: res.data.PagedList.Data
         })
+        if (res.data.PagedList.Data.length == 0) {
+          wx.showToast({
+            title: '暂无相关职位信息',
+            icon: 'none',
+            duration: 2200
+          })
+          return
+        }
       })
   },
   /**

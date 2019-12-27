@@ -50,9 +50,10 @@ Page({
       })
   },
   onLoad: function() {
+
     this.getIndexData()
     this.getData()
-
+    
   },
   getData: function() {
     let that = this
@@ -96,6 +97,7 @@ Page({
               // })
             } else {
               app.globalData.token = r.data.Data.Token
+              console.log(r.data.Data.Token)
               resolve(r.data.Data.Token)
             }
           }

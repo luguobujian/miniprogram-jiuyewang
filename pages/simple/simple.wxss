@@ -8,6 +8,7 @@
 .weui-cell {
   flex: 1;
   /* width: 620rpx; */
+  /* background-color: #000; */
 }
 
 .weui-r {

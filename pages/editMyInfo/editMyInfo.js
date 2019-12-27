@@ -73,7 +73,7 @@ Page({
       wx.showToast({
         title: '姓名有误',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -81,7 +81,7 @@ Page({
       wx.showToast({
         title: '请选择出生年月',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -89,7 +89,7 @@ Page({
       wx.showToast({
         title: '请选择参加工作时间',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -97,7 +97,7 @@ Page({
       wx.showToast({
         title: '请输入正确手机号',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -109,7 +109,7 @@ Page({
       wx.showToast({
         title: '请输入正确邮箱',
         icon: 'none',
-        duration: 1500
+        duration: 2200
       })
       return
     }
@@ -130,7 +130,7 @@ Page({
           wx.showToast({
             title: '保存成功',
             icon: 'none',
-            duration: 1500
+            duration: 2200
           })
           const pages = getCurrentPages()
           const prePage = pages[pages.length - 2];

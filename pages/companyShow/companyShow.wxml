@@ -6,7 +6,7 @@
         <view class="company-box clearfix">
           <view class="fl">{{detail.Name}}</view>
           <view class="logo fr">
-            <image src=""></image>
+            <image src="{{detail.LogoUrl}}"></image>
           </view>
         </view>
         <view class="simple-title">

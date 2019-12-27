@@ -4,7 +4,7 @@
     <view class="top">
       <view class="top-t clearfix">
         <view class="top-left fl">
-          <view>{{detail.Name}}
+          <view class="title">{{detail.Name}}
             <view class="edit-btn" bindtap="goEditMyInfo">编辑</view>
           </view>
           <view>
@@ -26,13 +26,15 @@
           </view>
         </view>
         <view class="avatar-box fl">
-          <image class="avatar"></image>
+          <image class="avatar" src="AvatarUrl"></image>
         </view>
       </view>
       <view class="top-bottom">
+        <view class="title">求职期望
+          <view class="edit-btn fr" bindtap="goEditMyExpect">编辑</view>
+        </view>
         <view>
           求职类型：{{detail.Expect.Position}}
-          <view class="edit-btn fr" bindtap="goEditMyExpect">编辑</view>
         </view>
         <view>工作地点：{{detail.Expect.ScopeText}}</view>
         <view>期望薪资：{{detail.Expect.SalaryText}}</view>
@@ -71,9 +73,9 @@
         <view class="second-title">{{item.School}}
           <view class="edit-btn fr" data-ae="{{item.Id}}" bindtap="goEditEdu">编辑</view>
         </view>
-        <view class="second-date">2017.05-2018.12</view>
+        <view class="second-date">{{item.StartDate}}-{{item.EndDate}}</view>
         <view class="c-con-c c">
-          {{item.Education}} {{item.Profession}}
+          {{item.EducationText}} {{item.Profession}}
         </view>
       </view>
     </view>
